@@ -1,0 +1,8 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1781807939
+icon.svg::CompressedTexture2D::973171356559204741::1781755754::1781807939::1::::<><><>0<>0<>293619c2fa562fbc455db275c6383abe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1781755754::0::1::::<><><>0<>0<><>::
+::res://assets/::1781755801
+CosmicLilac_Tiles.png::CompressedTexture2D::6107622320706593937::1781755754::1781807939::1::::<><><>0<>0<>780416b35e2e9b997534f88c4d5bc56c<>res://.godot/imported/CosmicLilac_Tiles.png-8b76929a0f5e563e799a05ff920af0b2.ctex::
+::res://scenes/::0
+game.tscn::PackedScene::9177643438539272759::1781807821::0::1::::<><><>0<>0<><>::res://assets/CosmicLilac_Tiles.png
