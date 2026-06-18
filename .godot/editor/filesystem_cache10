@@ -1,8 +1,18 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1781807939
+::res://::1781808169
 icon.svg::CompressedTexture2D::973171356559204741::1781755754::1781807939::1::::<><><>0<>0<>293619c2fa562fbc455db275c6383abe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1781755754::0::1::::<><><>0<>0<><>::
-::res://assets/::1781755801
+::res://assets/::1781808169
 CosmicLilac_Tiles.png::CompressedTexture2D::6107622320706593937::1781755754::1781807939::1::::<><><>0<>0<>780416b35e2e9b997534f88c4d5bc56c<>res://.godot/imported/CosmicLilac_Tiles.png-8b76929a0f5e563e799a05ff920af0b2.ctex::
-::res://scenes/::0
+::res://assets/character sprites/::1781808164
+Attack 1.png::CompressedTexture2D::4560650817935959899::1781808148::1781808170::1::::<><><>0<>0<>57dd3f526ddef770ecd20bd93a315463<>res://.godot/imported/Attack 1.png-95da6c04c3608a7e6d680a1a3f1b22e8.ctex::
+Attack 2.png::CompressedTexture2D::4413675937507861621::1781808148::1781808170::1::::<><><>0<>0<>d6053e4b6d60089d964d5d274defef28<>res://.godot/imported/Attack 2.png-b80c2d34c5671cbdc44cc2c94d508d33.ctex::
+Dash.png::CompressedTexture2D::6505398551750637570::1781808148::1781808170::1::::<><><>0<>0<>6fea1ddc1d95b33fdb97d803b2990c7e<>res://.godot/imported/Dash.png-3b27f4b494a0e518699a4289a6eae787.ctex::
+Death.png::CompressedTexture2D::4792210171433586829::1781808148::1781808170::1::::<><><>0<>0<>79c0c59b209b08548e4685d71e1e6710<>res://.godot/imported/Death.png-8058f486c519926e2eb1735e27bc1c49.ctex::
+Fall.png::CompressedTexture2D::458261889349143849::1781808148::1781808170::1::::<><><>0<>0<>6957555c6f71681859635c42e1462fab<>res://.godot/imported/Fall.png-9949785deb3d5b26991d1960c1ceaeb7.ctex::
+Hurt.png::CompressedTexture2D::8310910995105867722::1781808148::1781808170::1::::<><><>0<>0<>ecd732255f1dfaaa89c8c53325813351<>res://.godot/imported/Hurt.png-378432e2b1a12fcfcc791a57d9f7f872.ctex::
+Idle.png::CompressedTexture2D::598009487807597853::1781808148::1781808170::1::::<><><>0<>0<>32ae364c916e408e8b4936887c70b4e8<>res://.godot/imported/Idle.png-b6a57e5ecf993e6feb066c59ed6080b5.ctex::
+Jump.png::CompressedTexture2D::8619673856324411591::1781808148::1781808170::1::::<><><>0<>0<>37ed48bbd114450fa595330b298d6b8a<>res://.godot/imported/Jump.png-5eb93eca295e7e86c24dc6ac7905a2e3.ctex::
+Run.png::CompressedTexture2D::4798030880452827610::1781808148::1781808170::1::::<><><>0<>0<>607da8645c725d984089d6666d7fd54b<>res://.godot/imported/Run.png-bdc3916cafac81e3574d1010d8a0d49e.ctex::
+::res://scenes/::1781807952
 game.tscn::PackedScene::9177643438539272759::1781807821::0::1::::<><><>0<>0<><>::res://assets/CosmicLilac_Tiles.png
