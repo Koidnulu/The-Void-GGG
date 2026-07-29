@@ -1,1 +1,14 @@
-res://main_character.tscn
+res://characters for dialogic/eyere.dch
+res://characters for dialogic/protag.dch
+res://characters for dialogic/system.dch
+res://scenes/eyery.tscn
+res://styles/text_bubble.tres
+res://styles/default_system.tres
+res://scenes/game.tscn
+res://timelines/eyere introduction.dtl
+res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choice_panel_normal.tres
+res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choice_panel_hover.tres
+res://scenes/main_character.tscn
+res://scripts/killzone.gd
+res://killzone.tscn
+res://timelines/you died.dtl

@@ -1,2 +1,14 @@
+CollisionShape2D
+StaticBody2D
+ColorRect
+Sprite2D
+AnimatableBody2D
+AnimationPlayer
+TileMapLayer
+Marker2D
+Timer
+Area2D
+Parallax2D
 AnimatedSprite2D
 CharacterBody2D
+Camera2D
