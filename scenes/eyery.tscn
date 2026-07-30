@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += ProjectSettings.get_setting(\"physics/2d/default_gravity\") * delta
 	if !event:
 		character.play(\"idle\")
+		velocity.x = 0
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -421,9 +422,7 @@ script = SubResource("GDScript_7qo1e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=681072925]
 position = Vector2(33, 0)
 sprite_frames = SubResource("SpriteFrames_r1sgu")
-animation = &"disappear"
-frame = 13
-frame_progress = 1.0
+animation = &"hurt"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=531447710]
 

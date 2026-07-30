@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://biqu885w5u7x8" path="res://scenes/main_character.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://hwi10tvqoxqq" path="res://scenes/eyery.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://d4dy4xkyg4kp5" path="res://killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dvin8hvnh3na" path="res://eyery_lunch_gem.tscn" id="6_p57ef"]
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends Node2D
@@ -12,32 +13,34 @@ script/source = "extends Node2D
 # first screen loaded
 @onready var eyery = $eyery
 @onready var main_character: CharacterBody2D = $main_character
-
 var intro_played = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Dialogic.start(\"tutorial\");
+	await Dialogic.start(\"tutorial\");
 	await Dialogic.timeline_ended
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	# use eyere_intro rather than eyere_intro() because need a calleable function
 	# (not yet called) instead of letting it execute immediately
 	eyery.player_here.connect(eyery_intro)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Dialogic.VAR.get_variable(\"eyery_lunch\") == true and intro_played:
+		eyery.player_here.connect(func(): Dialogic.start(\"found eyery lunch\"), Object.CONNECT_ONE_SHOT)
+		Dialogic.VAR.set_variable(\"eyery_lunch\", false)
 	
 func eyery_intro():
-	if eyery.player_here.is_connected(eyery_intro):
-		eyery.player_here.disconnect(eyery_intro)
-	await eyery.intro_animation()
-	var layout = Dialogic.Styles.load_style(\"res://styles/text_bubble.tres\")
-	layout.register_character(load(\"res://characters for dialogic/eyere.dch\"), eyery)
+	eyery.player_here.disconnect(eyery_intro)
+	var layout = Dialogic.Styles.load_style(\"res://styles/text_bubble.tres\") 
+	layout.register_character(load(\"res://characters for dialogic/eyere.dch\"), eyery) 
 	layout.register_character(load(\"res://characters for dialogic/protag.dch\"), $main_character)
+	await eyery.intro_animation()
 	Dialogic.start(\"eyere introduction\")
-
+	await Dialogic.timeline_ended
+	intro_played = true;
+	
+# if dialogic emits a signal
 func _on_dialogic_signal(argument:String):
 	if argument == \"running eyery\":
 		Dialogic.paused = true;
@@ -621,3 +624,7 @@ shape = SubResource("WorldBoundaryShape2D_p57ef")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1963258132]
 shape = SubResource("WorldBoundaryShape2D_iywne")
+
+[node name="Area2D" parent="." unique_id=277896725 instance=ExtResource("6_p57ef")]
+position = Vector2(1002, 28)
+scale = Vector2(0.51341546, 0.51341546)

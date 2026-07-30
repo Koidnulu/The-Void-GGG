@@ -12,20 +12,13 @@ system: Use [TRANSLATOR]?
 	system: Help?
 	- Yes
 		protag: Fine. I'll just help you find lunch then!
-		protag: Here, can I get the [CORE MATERIAL] now?
-		eyere: I threw it elsewhere because it tasted bad.
-		eyere: Don’t worry, it should be somewhere near. Just search, I heard humans are agile anyway.
-		protag: Seriously…?
 	- No
 		protag: Why should I help you find lunch? I’m not doing that!
 		eyere: I won’t give you the thing then. Ever!
 		protag: I guess I have to find some other way.
-		label fight
 		system: Fight?
 		- Yes
 			[signal arg="battle mode eyery"]
-		- No
-			[end_timeline]
 - No
 	eyere: ??...?-!
 	protag: I have no idea what this guy is saying. But I need the [CORE MATERIAL]

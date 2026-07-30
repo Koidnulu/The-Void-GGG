@@ -1,8 +1,9 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1785271650
+::res://::1785336862
 icon.svg::CompressedTexture2D::973171356559204741::1781755754::1781807939::1::::<><><>0<>0<>293619c2fa562fbc455db275c6383abe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 New_File.tres::Resource/DialogicStyle::961511705691997237::1785198102::0::1::::<><><>0<>0<><>::uid://cqpb3ie51rwl5::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
 README.md::TextFile::-1::1781755754::0::1::::<><><>0<>0<><>::
+killzone.tscn::PackedScene::9202441870278776332::1785283758::0::1::::<><><>0<>0<><>::uid://cyc5evlu7sgso::::res://scripts/killzone.gd
 ::res://addons/::1785271627
 ::res://addons/dialogic/::1785271628
 export_plugin.gd::GDScript::7207191105660148901::1785271627::0::1::::<>EditorExportPlugin<><>0<>0<><>::
@@ -326,7 +327,7 @@ icon_position.png::CompressedTexture2D::6240753079284806829::1785271627::1785271
 index.gd::GDScript::2075963725075832992::1785271627::0::1::::<>DialogicIndexer<><>0<>1<><>::
 node_portrait_container.gd::GDScript::8946131689167411849::1785271627::0::1::::DialogicNode_PortraitContainer<>Control<><>0<>1<><>::
 portrait_position.svg::CompressedTexture2D::3357497812767945100::1785271627::1785271627::1::::<><><>0<>0<>5a1e49222ed21ae769c56152f9a096ab<>res://.godot/imported/portrait_position.svg-f025767e40032b9ebdeab1f9e882467a.ctex::
-preview_character.tres::Resource/DialogicCharacter::8864788605870491990::1785271627::0::1::::<><><>0<>0<><>::uid://don4ds5f38byo::::res://addons/dialogic/Resources/character.gd
+preview_character.tres::Resource/DialogicCharacter::8864788605870491990::1785271627::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::uid://don4ds5f38byo::::res://addons/dialogic/Resources/character.gd
 settings_portraits.gd::GDScript::6752804783309176286::1785271627::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
 settings_portraits.tscn::PackedScene::5887474122682821078::1785271627::0::1::::<><><>0<>0<><>::uid://c3hdycwp0hrdm::::res://addons/dialogic/Modules/Character/settings_portraits.gd<>uid://dbpkta2tjsqim::::res://addons/dialogic/Editor/Common/hint_tooltip_icon.tscn<>uid://dpwhshre1n4t6::::res://addons/dialogic/Editor/Events/Fields/field_options_dynamic.tscn<>uid://7mvxuaulctcq::::res://addons/dialogic/Editor/Events/Fields/field_file.tscn
 simple_image_portrait_thumbnail.png::CompressedTexture2D::1139979017741368080::1785271627::1785271627::1::::<><><>0<>0<>b88999b710c42c6bf666ba569147b4f4<>res://.godot/imported/simple_image_portrait_thumbnail.png-3d6c6de8187fd7911017e2ef9d3c40a4.ctex::
@@ -451,11 +452,11 @@ preview.png::CompressedTexture2D::3354729633291840074::1785271628::1785271628::1
 text_input_layer.gd::GDScript::5412026392586618337::1785271628::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
 text_input_layer.tscn::PackedScene::6259548876513588080::1785271628::0::1::::<><><>0<>0<><>::uid://cjdvjwjrj86sj::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.gd<>uid://biqpjv0qyefvf::::res://addons/dialogic/Modules/TextInput/node_text_input.gd
 text_input_layer_icon.svg::CompressedTexture2D::9001753205476851513::1785271628::1785271628::1::::<><><>0<>0<>f6e608eec09465c88b755d438d4a612f<>res://.godot/imported/text_input_layer_icon.svg-5a1e8bca317bf45f6805d82812407215.ctex::
-::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/::1785271628
+::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/::1785282247
 choices_layer_icon.svg::CompressedTexture2D::1619877049926111804::1785271628::1785271628::1::::<><><>0<>0<>617ba57953eae20eb4dc594720cd9472<>res://.godot/imported/choices_layer_icon.svg-2f676308da08dddba733cb2bfba8fc69.ctex::
 choice_panel_focus.tres::StyleBoxFlat::3842993240234113681::1785271628::0::1::::<><><>0<>0<><>::
-choice_panel_hover.tres::StyleBoxFlat::1653175341677166036::1785271628::0::1::::<><><>0<>0<><>::
-choice_panel_normal.tres::StyleBoxFlat::1580218980019447892::1785271628::0::1::::<><><>0<>0<><>::
+choice_panel_hover.tres::StyleBoxFlat::1653175341677166036::1785282247::0::1::::<><><>0<>0<><>::
+choice_panel_normal.tres::StyleBoxFlat::1580218980019447892::1785282175::0::1::::<><><>0<>0<><>::
 part_config.cfg::TextFile::-1::1785271628::0::1::::<><><>0<>0<><>::
 preview.png::CompressedTexture2D::546001159453912051::1785271628::1785271628::1::::<><><>0<>0<>7856ececaacff83bda291b359c951320<>res://.godot/imported/preview.png-ae89c99370d002f2ecf00af8e270d88c.ctex::
 vn_choice_layer.gd::GDScript::581637318614735199::1785271628::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
@@ -573,12 +574,12 @@ event_text.gd::GDScript::7199229198122971661::1785271628::0::1::::DialogicTextEv
 icon.svg::CompressedTexture2D::9151163472776694991::1785271628::1785271628::1::::<><><>0<>0<>c3322103d45750d096f11ecd03411177<>res://.godot/imported/icon.svg-e2501ddcdef01c7f2c3538940f5abfc1.ctex::
 index.gd::GDScript::3735692247776249690::1785271628::0::1::::<>DialogicIndexer<><>0<>1<><>::
 manual_advance.gd::GDScript::7278833021501408885::1785271628::0::1::::DialogicManualAdvance<>RefCounted<><>0<>0<><>::
-node_dialog_text.gd::GDScript::8367256849905527338::1785271628::0::1::::DialogicNode_DialogText<>RichTextLabel<>res://addons/dialogic/Modules/Text/node_dialog_text_icon.svg<>0<>1<><>::
+node_dialog_text.gd::GDScript::8367256849905527338::1785271628::0::1::::DialogicNode_DialogText<>RichTextLabel<><>0<>1<><>::
 node_dialog_text_icon.svg::CompressedTexture2D::4044689466443943908::1785271628::1785271628::1::::<><><>0<>0<>497fe8cd6cb72aeedb7077c36069c336<>res://.godot/imported/node_dialog_text_icon.svg-3cf845e99d76137d8156865c09f39e3e.ctex::
 node_input.gd::GDScript::6135746528022206122::1785271628::0::1::::DialogicNode_Input<>Control<><>0<>0<><>::
-node_name_label.gd::GDScript::2409060177523604634::1785271628::0::1::::DialogicNode_NameLabel<>Label<>res://addons/dialogic/Modules/Text/node_name_label_icon.svg<>0<>0<><>::
+node_name_label.gd::GDScript::2409060177523604634::1785271628::0::1::::DialogicNode_NameLabel<>Label<><>0<>0<><>::
 node_name_label_icon.svg::CompressedTexture2D::753910208124862534::1785271628::1785271628::1::::<><><>0<>0<>3bc6897be0d1bfc61b99594389e51bf2<>res://.godot/imported/node_name_label_icon.svg-d482939b74b41ec2da6edc97e41c8bf8.ctex::
-node_next_indicator.gd::GDScript::8643102605516753138::1785271628::0::1::::DialogicNode_NextIndicator<>Control<>res://addons/dialogic/Modules/Text/node_next_indicator_icon.svg<>0<>0<><>::
+node_next_indicator.gd::GDScript::8643102605516753138::1785271628::0::1::::DialogicNode_NextIndicator<>Control<><>0<>0<><>::
 node_next_indicator_icon.svg::CompressedTexture2D::302873534409359568::1785271628::1785271628::1::::<><><>0<>0<>d16cf5e370ce5bad31aa615e40bbdce1<>res://.godot/imported/node_next_indicator_icon.svg-06167a3b3e290941c1c34386ebd60af8.ctex::
 node_type_sound.gd::GDScript::8257091630640999901::1785271628::0::1::::DialogicNode_TypeSounds<>AudioStreamPlayer<><>0<>1<><>::
 settings_text.gd::GDScript::5031029662621467051::1785271628::0::1::::<>DialogicSettingsPage<><>0<>1<><>::
@@ -621,7 +622,7 @@ event_wait_input.gd::GDScript::2473881298755643258::1785271628::0::1::::Dialogic
 icon.svg::CompressedTexture2D::2766149336681406939::1785271628::1785271628::1::::<><><>0<>0<>ff3c6d771564ecef7600244b14582d8f<>res://.godot/imported/icon.svg-cb8e50b081a310c64183b12c6d12fcf2.ctex::
 index.gd::GDScript::971839668851566764::1785271628::0::1::::<>DialogicIndexer<><>0<>1<><>::
 ::res://addons/dialogic/Resources/::1785271627
-character.gd::GDScript::8170509915016804394::1785271627::0::1::::DialogicCharacter<>Resource<>uid://bbea0efx0ybu7<>0<>1<><>::
+character.gd::GDScript::8170509915016804394::1785271627::0::1::::DialogicCharacter<>Resource<><>0<>1<><>::
 CharacterResourceLoader.gd::GDScript::3230683283296700613::1785271627::0::1::::DialogicCharacterFormatLoader<>ResourceFormatLoader<><>0<>1<><>::
 CharacterResourceSaver.gd::GDScript::11330996335859447::1785271627::0::1::::DialogicCharacterFormatSaver<>ResourceFormatSaver<><>0<>1<><>::
 dialogic_identifiable_resource.gd::GDScript::7504157656011423462::1785271627::0::1::::<>Resource<><>0<>1<><>::
@@ -630,7 +631,7 @@ dialogic_layout_layer.gd::GDScript::7097085608305494937::1785271627::0::1::::Dia
 dialogic_style.gd::GDScript::8686860375682204498::1785271627::0::1::::DialogicStyle<>Resource<><>0<>1<><>::
 dialogic_style_layer.gd::GDScript::3944887282532454131::1785271627::0::1::::DialogicStyleLayer<>Resource<><>0<>1<><>::
 event.gd::GDScript::8763588563558386910::1785271627::0::1::::DialogicEvent<>Resource<><>0<>1<><>::
-timeline.gd::GDScript::5667425671830628919::1785271627::0::1::::DialogicTimeline<>Resource<>uid://j7ym07anlusi<>0<>1<><>::
+timeline.gd::GDScript::5667425671830628919::1785271627::0::1::::DialogicTimeline<>Resource<><>0<>1<><>::
 TimelineResourceLoader.gd::GDScript::1953327801557244659::1785271627::0::1::::DialogicTimelineFormatLoader<>ResourceFormatLoader<><>0<>1<><>::
 TimelineResourceSaver.gd::GDScript::6005903703142383367::1785271627::0::1::::DialogicTimelineFormatSaver<>ResourceFormatSaver<><>0<>1<><>::
 ::res://addons/godot_super-wakatime/::1785197983
@@ -641,9 +642,11 @@ godot_super-wakatime.gd::GDScript::6277149880384411866::1785197983::0::1::::<>Ed
 plugin.cfg::TextFile::-1::1785197983::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1785197983::0::1::::<><><>0<>0<><>::
 utils.gd::GDScript::5251015809120159908::1785197983::0::1::::<>RefCounted<><>0<>0<><>::
-::res://assets/::1785196745
+::res://assets/::1785338134
 CosmicCastleLilacPNG_PetricakeGames.png::CompressedTexture2D::6937222910850950050::1785174369::1785174398::1::::<><><>0<>0<>ca6b3442eaedab6331591c358591e6d7<>res://.godot/imported/CosmicCastleLilacPNG_PetricakeGames.png-9665cceb24da28dcfa86ec4839b4fbb2.ctex::
 CosmicLilac_Tiles.png::CompressedTexture2D::6107622320706593937::1781755754::1781807939::1::::<><><>0<>0<>780416b35e2e9b997534f88c4d5bc56c<>res://.godot/imported/CosmicLilac_Tiles.png-8b76929a0f5e563e799a05ff920af0b2.ctex::
+GEM 7 - BLUE - Spritesheet.png::CompressedTexture2D::5720442902869515564::1785338134::1785338135::1::::<><><>0<>0<>21826890d4d05b907aa88ff54076bc9d<>res://.godot/imported/GEM 7 - BLUE - Spritesheet.png-ee0f82b10a3e646606beb4d27b02552d.ctex::
+StewV_Minerals_Sheet_01.png::CompressedTexture2D::56285971570596262::1785337344::1785337345::1::::<><><>0<>0<>79cfc408e60330052ce2c2baecfa7912<>res://.godot/imported/StewV_Minerals_Sheet_01.png-de6094090edf67752e5aa1b7815285f0.ctex::
 ::res://assets/character sprites/::1785176800
 Attack 1.png::CompressedTexture2D::4560650817935959899::1781808148::1781808170::1::::<><><>0<>0<>57dd3f526ddef770ecd20bd93a315463<>res://.godot/imported/Attack 1.png-95da6c04c3608a7e6d680a1a3f1b22e8.ctex::
 Attack 2.png::CompressedTexture2D::4413675937507861621::1781808148::1781808170::1::::<><><>0<>0<>d6053e4b6d60089d964d5d274defef28<>res://.godot/imported/Attack 2.png-b80c2d34c5671cbdc44cc2c94d508d33.ctex::
@@ -656,20 +659,22 @@ Jump.png::CompressedTexture2D::8619673856324411591::1781808148::1781808170::1:::
 Run.png::CompressedTexture2D::4798030880452827610::1781808148::1781808170::1::::<><><>0<>0<>607da8645c725d984089d6666d7fd54b<>res://.godot/imported/Run.png-bdc3916cafac81e3574d1010d8a0d49e.ctex::
 ::res://assets/monster sprites/::1785176820
 EyeBall Monster-Sheet.png::CompressedTexture2D::2019580485128145183::1785176792::1785176820::1::::<><><>0<>0<>2af28cb7d41a21a918b37285d6f5c635<>res://.godot/imported/EyeBall Monster-Sheet.png-b57196d50a45ddb7c169b37f08e8ecdf.ctex::
-::res://characters for dialogic/::1785271520
-eyere.dch::Resource/DialogicCharacter::7213725524770737106::1785271520::0::1::::<><><>0<>0<><>::
-protag.dch::Resource/DialogicCharacter::621249054493176943::1785271519::0::1::::<><><>0<>0<><>::
-system.dch::Resource/DialogicCharacter::483212015148223184::1785271518::0::1::::<><><>0<>0<><>::
-::res://scenes/::1785271214
-eyery.tscn::PackedScene::537271726050340956::1785271214::0::1::::<><><>0<>0<><>::uid://31kgwa68hmyx::::res://assets/monster sprites/EyeBall Monster-Sheet.png
-game.tscn::PackedScene::9177643438539272759::1785271195::0::1::::<><><>0<>0<><>::uid://ctatwai8iuvs0::::res://assets/CosmicLilac_Tiles.png<>uid://c53pbvi047nli::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn
-main_character.tscn::PackedScene::2982236528571687919::1785201994::0::1::::<><><>0<>0<><>::uid://b58hiuch66e88::::res://assets/character sprites/Attack 1.png<>uid://b35auldxkiesb::::res://assets/character sprites/Attack 2.png<>uid://cyxi71beuu28u::::res://assets/character sprites/Dash.png<>uid://cajnabt7txr6d::::res://assets/character sprites/Death.png<>uid://gr8rhmfl7p2h::::res://assets/character sprites/Fall.png<>uid://dqn4qwjclbjk1::::res://assets/character sprites/Hurt.png<>uid://irxenabtryv2::::res://assets/character sprites/Idle.png<>uid://du2o1fbjkteip::::res://assets/character sprites/Jump.png<>uid://camg4q7fcwicg::::res://assets/character sprites/Run.png
-::res://scripts/::1785182831
-::res://styles/::1785271235
-default_system.tres::Resource/DialogicStyle::5489917893430481189::1785269674::0::1::::<><><>0<>0<><>::uid://cqpb3ie51rwl5::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
-text_bubble.tres::Resource/DialogicStyle::4230905854466068541::1785271235::0::1::::<><><>0<>0<><>::uid://syki6k0e6aac::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://d2it0xiap3gnt::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
+::res://characters for dialogic/::1785282308
+eyere.dch::Resource/DialogicCharacter::7213725524770737106::1785282306::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::
+protag.dch::Resource/DialogicCharacter::621249054493176943::1785282307::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::
+system.dch::Resource/DialogicCharacter::483212015148223184::1785282308::0::1::::<><>uid://bbea0efx0ybu7<>0<>0<><>::
+::res://scenes/::1785336861
+eyery.tscn::PackedScene::537271726050340956::1785273473::0::1::::<><><>0<>0<><>::uid://31kgwa68hmyx::::res://assets/monster sprites/EyeBall Monster-Sheet.png
+game.tscn::PackedScene::9177643438539272759::1785336861::0::1::::<><><>0<>0<><>::uid://ctatwai8iuvs0::::res://assets/CosmicLilac_Tiles.png<>uid://c53pbvi047nli::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn<>uid://d4dy4xkyg4kp5::::res://killzone.tscn
+main_character.tscn::PackedScene::2982236528571687919::1785283292::0::1::::<><><>0<>0<><>::uid://b58hiuch66e88::::res://assets/character sprites/Attack 1.png<>uid://b35auldxkiesb::::res://assets/character sprites/Attack 2.png<>uid://cyxi71beuu28u::::res://assets/character sprites/Dash.png<>uid://cajnabt7txr6d::::res://assets/character sprites/Death.png<>uid://gr8rhmfl7p2h::::res://assets/character sprites/Fall.png<>uid://dqn4qwjclbjk1::::res://assets/character sprites/Hurt.png<>uid://irxenabtryv2::::res://assets/character sprites/Idle.png<>uid://du2o1fbjkteip::::res://assets/character sprites/Jump.png<>uid://camg4q7fcwicg::::res://assets/character sprites/Run.png
+::res://scripts/::1785287370
+killzone.gd::GDScript::6463332144101100250::1785287370::0::1::::<>Area2D<><>0<>0<><>::
+::res://styles/::1785282302
+default_system.tres::Resource/DialogicStyle::5489917893430481189::1785282302::0::1::::<><><>0<>0<><>::uid://cqpb3ie51rwl5::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
+text_bubble.tres::Resource/DialogicStyle::4230905854466068541::1785281872::0::1::::<><><>0<>0<><>::uid://syki6k0e6aac::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_TextBubble/text_bubble_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://d2it0xiap3gnt::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Textbubble/text_bubble_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
 ::res://styles/TextbubbleLayer/::1785197440
 text_bubble_layer.gd::GDScript::8293270159599260941::1785197440::0::1::::<>DialogicLayoutLayer<><>0<>1<><>::
-::res://timelines/::1785271517
-eyere introduction.dtl::Resource/DialogicTimeline::7677614274024700705::1785271517::0::1::::<><><>0<>0<><>::uid://da1nagkna3im1<>uid://i3647vglvf5h
-tutorial.dtl::Resource/DialogicTimeline::5168395127215197580::1785198250::0::1::::<><><>0<>0<><>::uid://g5cowtqesx0s
+::res://timelines/::1785284146
+eyere introduction.dtl::Resource/DialogicTimeline::7677614274024700705::1785282330::0::1::::<><>uid://j7ym07anlusi<>0<>0<><>::uid://da1nagkna3im1<>uid://i3647vglvf5h<>uid://g5cowtqesx0s
+you died.dtl::Resource/DialogicTimeline::4201994945115484147::1785284146::0::1::::<><>uid://j7ym07anlusi<>0<>0<><>::uid://i3647vglvf5h<>uid://g5cowtqesx0s
+tutorial.dtl::Resource/DialogicTimeline::5168395127215197580::1785198250::0::1::::<><>uid://j7ym07anlusi<>0<>0<><>::uid://g5cowtqesx0s

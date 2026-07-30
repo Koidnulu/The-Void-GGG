@@ -17,17 +17,38 @@ script/source = "extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const ACCEL = 20;
+const DASH_SPEED = 300
 @onready var character: AnimatedSprite2D = $AnimatedSprite2D
+@onready var coyote_timer: Timer = $\"coyote timer\"
+@onready var dash_timer: Timer = $\"dash timer\"
 
+var airbone : bool = false
+var dashing : bool = false
+var can_dash : bool = true
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	
+	if is_on_floor():
+		if airbone:
+			airbone = false;
+			# squash, so opposite scale of stretch
+			character.scale = Vector2(1.3, 0.7)
+	else:
+		velocity += get_gravity() * delta * 1.3
+		airbone = true
 
 	# Handle jump.
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+	# even if player not on floor, the coyote timer started, so still could jump
+	if Input.is_action_just_pressed(\"jump\") and (is_on_floor() || !coyote_timer.is_stopped()) and !velocity.y>0:
 		velocity.y = JUMP_VELOCITY
+		# stretch
+		character.scale = Vector2(0.7, 1.3)
+	
+	if Input.is_action_just_pressed(\"dash\") and can_dash:
+		dashing = true;
+		can_dash = false;
+		dash_timer.start();
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -40,24 +61,48 @@ func _physics_process(delta: float) -> void:
 		character.flip_h = true;
 
 	if direction:
-		velocity.x = direction * SPEED
+		if dashing:
+			velocity.x = direction * DASH_SPEED
+		else:	
+			velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, ACCEL * SPEED)
-
+	
+	var was_on_floor = is_on_floor()
+	
 	move_and_slide()
+	
+	 # changed from being on floor to not
+	if was_on_floor and !is_on_floor():
+		coyote_timer.start()
+		
 	update_animations()
+	
+	# move toward means to change slowly towards, from the stretched x scale to 1
+	# (original scale) by a speed of 3 * delta
+	character.scale.x = move_toward(character.scale.x, 1, 1.5* delta)
+	character.scale.y = move_toward(character.scale.y, 1, 1.5 * delta)
 
 func update_animations() -> void:
 	if is_on_floor():
 		if velocity.x == 0:
 			character.play(\"idle\");
+		elif dashing == true:
+			character.play(\"dash\")
 		else:
 			character.play(\"run\");
 	else:
 		if velocity.y < 0:
 			character.play(\"jump\");
+		elif dashing == true:
+			character.play(\"dash\")
 		else:
 			character.play(\"fall\");
+
+# time of dashing
+func _on_dash_timer_timeout() -> void:
+	dashing = false 
+	can_dash = true
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmkwl"]
@@ -684,9 +729,16 @@ script = SubResource("GDScript_0ltrl")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1819016888]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_1vudk")
-animation = &"fall"
-frame_progress = 0.30547544
+animation = &"attack 1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492116037]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_0ltrl")
+
+[node name="coyote timer" type="Timer" parent="." unique_id=1573089695]
+wait_time = 0.15
+one_shot = true
+
+[node name="dash timer" type="Timer" parent="." unique_id=2059820861]
+
+[connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]

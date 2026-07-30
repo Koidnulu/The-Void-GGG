@@ -12,3 +12,7 @@ res://scenes/main_character.tscn
 res://scripts/killzone.gd
 res://killzone.tscn
 res://timelines/you died.dtl
+res://scripts/eyery_lunch_gem.gd
+res://eyery_lunch_gem.tscn
+res://timelines/found_eyery_lunch.dtl
+res://timelines/found eyery lunch.dtl
