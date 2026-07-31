@@ -1,39 +1,48 @@
 [gd_scene format=3 uid="uid://hwi10tvqoxqq"]
 
 [ext_resource type="Texture2D" uid="uid://31kgwa68hmyx" path="res://assets/monster sprites/EyeBall Monster-Sheet.png" id="1_5yqyc"]
+[ext_resource type="Script" uid="uid://bfmph5bu31rnt" path="res://scripts/state_machine.gd" id="2_pvmbe"]
+[ext_resource type="Script" uid="uid://clstupf37nwo3" path="res://scripts/follow_eyery.gd" id="3_yyd2i"]
+[ext_resource type="Script" uid="uid://b1nbl5ih08jja" path="res://scripts/idle_eyery.gd" id="4_mlf01"]
+[ext_resource type="Script" uid="uid://tre6e6re4oud" path="res://scripts/attack_eyery.gd" id="5_mlf01"]
 
 [sub_resource type="GDScript" id="GDScript_7qo1e"]
 script/source = "extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 signal player_here;
-var event: bool = false;
+var health = 100
 
 @onready var character: AnimatedSprite2D = $AnimatedSprite2D
-	
-func _physics_process(delta: float) -> void:
+@onready var state_machine: StateMachine = $StateMachine
+@onready var eyery_hitbox: Area2D = $eyery_hitbox
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting(\"physics/2d/default_gravity\") * delta
-	if !event:
-		character.play(\"idle\")
-		velocity.x = 0
+	var lost_health := 0
+	if get_tree().current_scene.name == \"battle eyery\":
+		if Input.is_action_just_pressed(\"attack1\"):
+			lost_health = 10
+		elif Input.is_action_just_pressed(\"attack2\"):
+			lost_health = 20
+	for body in eyery_hitbox.get_overlapping_bodies():
+		if body.name == \"main_character\":
+			health -= lost_health
+			print(health)
 	move_and_slide()
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == \"main_character\":
 		player_here.emit()
 
 func intro_animation():
-	event = true;
 	character.play(\"roll\");
 	await character.animation_finished;
 	global_position += Vector2(80, 0)
-	event = false;
+	state_machine.change_state(\"idle_eyery\") 
 	
 "
 
@@ -282,7 +291,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k43gt")
 }],
-"loop": false,
+"loop": 0,
 "name": &"disappear",
 "speed": 5.0
 }, {
@@ -326,9 +335,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1h4d7")
 }],
-"loop": true,
+"loop": 0,
 "name": &"hurt",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -373,7 +382,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ndpnf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -405,7 +414,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4xej")
 }],
-"loop": false,
+"loop": 0,
 "name": &"roll",
 "speed": 5.0
 }]
@@ -416,6 +425,8 @@ radius = 10.440307
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qo1e"]
 radius = 5.3851647
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwanj"]
+
 [node name="eyery" type="CharacterBody2D" unique_id=746042523]
 script = SubResource("GDScript_7qo1e")
 
@@ -423,6 +434,8 @@ script = SubResource("GDScript_7qo1e")
 position = Vector2(33, 0)
 sprite_frames = SubResource("SpriteFrames_r1sgu")
 animation = &"hurt"
+frame = 12
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=531447710]
 
@@ -434,4 +447,30 @@ shape = SubResource("CircleShape2D_ys72m")
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_7qo1e")
 
+[node name="StateMachine" type="Node" parent="." unique_id=1661419675 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_pvmbe")
+initial_state = NodePath("idle_eyery")
+metadata/_custom_type_script = "uid://bfmph5bu31rnt"
+
+[node name="follow_eyery" type="Node" parent="StateMachine" unique_id=1416597673 node_paths=PackedStringArray("enemy", "sprite")]
+script = ExtResource("3_yyd2i")
+enemy = NodePath("../..")
+sprite = NodePath("../../AnimatedSprite2D")
+metadata/_custom_type_script = "uid://clstupf37nwo3"
+
+[node name="idle_eyery" type="Node" parent="StateMachine" unique_id=1169958565]
+script = ExtResource("4_mlf01")
+metadata/_custom_type_script = "uid://b1nbl5ih08jja"
+
+[node name="attack_eyery" type="Node" parent="StateMachine" unique_id=731191074]
+script = ExtResource("5_mlf01")
+metadata/_custom_type_script = "uid://tre6e6re4oud"
+
+[node name="eyery_hitbox" type="Area2D" parent="." unique_id=546696009]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eyery_hitbox" unique_id=1165411578]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_bwanj")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="eyery_hitbox" to="." method="_on_eyery_hitbox_body_entered"]

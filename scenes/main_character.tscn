@@ -22,9 +22,11 @@ const DASH_SPEED = 300
 @onready var coyote_timer: Timer = $\"coyote timer\"
 @onready var dash_timer: Timer = $\"dash timer\"
 
+
 var airbone : bool = false
 var dashing : bool = false
 var can_dash : bool = true
+var attacking: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -49,6 +51,18 @@ func _physics_process(delta: float) -> void:
 		dashing = true;
 		can_dash = false;
 		dash_timer.start();
+		
+	if Input.is_action_just_pressed(\"attack1\"):
+		attacking = true;
+		character.play(\"attack 1\")
+		await character.animation_finished
+		attacking = false
+	
+	if Input.is_action_just_pressed(\"attack2\"):
+		attacking = true;
+		character.play(\"attack 2\")
+		await character.animation_finished
+		attacking = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -84,6 +98,8 @@ func _physics_process(delta: float) -> void:
 	character.scale.y = move_toward(character.scale.y, 1, 1.5 * delta)
 
 func update_animations() -> void:
+	if attacking:
+		return 
 	if is_on_floor():
 		if velocity.x == 0:
 			character.play(\"idle\");
@@ -103,6 +119,16 @@ func update_animations() -> void:
 func _on_dash_timer_timeout() -> void:
 	dashing = false 
 	can_dash = true
+	
+func _on_player_hitbox_body_entered(body: Node2D) -> void:
+	if body.name == \"eyery\" and get_tree().current_scene.name == \"battle eyery\":
+		var hearts_box: HBoxContainer = $\"../CanvasLayer\"/HBoxContainer
+		var state_machine = body.get_node_or_null(\"StateMachine\")
+		if  state_machine.current_state.name == \"attack_eyery\":
+			# attack_eyery is the class
+			var attack_script = state_machine.current_state
+			if attack_script.is_attacking:
+				hearts_box.damage_taken();
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmkwl"]
@@ -462,7 +488,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qthh5")
 }],
-"loop": true,
+"loop": 0,
 "name": &"attack 1",
 "speed": 12.0
 }, {
@@ -512,7 +538,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s5efc")
 }],
-"loop": true,
+"loop": 0,
 "name": &"attack 2",
 "speed": 12.0
 }, {
@@ -553,7 +579,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y53ib")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dash",
 "speed": 12.0
 }, {
@@ -612,7 +638,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mpoub")
 }],
-"loop": true,
+"loop": 1,
 "name": &"death",
 "speed": 12.0
 }, {
@@ -629,7 +655,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nw14h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall",
 "speed": 12.0
 }, {
@@ -655,7 +681,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cwvg1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 12.0
 }, {
@@ -672,7 +698,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vvs70")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 12.0
 }, {
@@ -701,7 +727,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_itlh2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 12.0
 }, {
@@ -715,13 +741,15 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_86033")
 }],
-"loop": true,
+"loop": 1,
 "name": &"take dmg (hurt)",
 "speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ltrl"]
 radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwanj"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=966005065]
 script = SubResource("GDScript_0ltrl")
@@ -730,6 +758,8 @@ script = SubResource("GDScript_0ltrl")
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_1vudk")
 animation = &"attack 1"
+frame = 4
+frame_progress = 0.4734877
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492116037]
 position = Vector2(0, -9)
@@ -741,4 +771,16 @@ one_shot = true
 
 [node name="dash timer" type="Timer" parent="." unique_id=2059820861]
 
+[node name="player_hitbox" type="Area2D" parent="." unique_id=1430767900]
+scale = Vector2(1.3091167, 1.3091167)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_hitbox" unique_id=1469425101]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_bwanj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=488596403]
+position = Vector2(0, -8.000001)
+scale = Vector2(1.0000001, 1.0000001)
+
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]

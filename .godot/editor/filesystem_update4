@@ -1,18 +1,14 @@
-res://characters for dialogic/eyere.dch
-res://characters for dialogic/protag.dch
-res://characters for dialogic/system.dch
-res://scenes/eyery.tscn
+res://scenes/game.tscn
 res://styles/text_bubble.tres
 res://styles/default_system.tres
-res://scenes/game.tscn
-res://timelines/eyere introduction.dtl
-res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choice_panel_normal.tres
-res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/choice_panel_hover.tres
+res://scenes/eyery.tscn
+res://scripts/state.gd
+res://scripts/state_machine.gd
+res://scripts/idle_eyery.gd
 res://scenes/main_character.tscn
-res://scripts/killzone.gd
-res://killzone.tscn
-res://timelines/you died.dtl
-res://scripts/eyery_lunch_gem.gd
-res://eyery_lunch_gem.tscn
-res://timelines/found_eyery_lunch.dtl
-res://timelines/found eyery lunch.dtl
+res://battle_eyery.tscn
+res://scripts/follow_eyery.gd
+res://scenes/battle_eyery.tscn
+res://scripts/attack_eyery.gd
+res://scenes/heart bar.tscn
+res://scripts/heart bar.gd

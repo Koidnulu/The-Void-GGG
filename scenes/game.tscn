@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c53pbvi047nli" path="res://assets/CosmicCastleLilacPNG_PetricakeGames.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://biqu885w5u7x8" path="res://scenes/main_character.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://hwi10tvqoxqq" path="res://scenes/eyery.tscn" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://d4dy4xkyg4kp5" path="res://killzone.tscn" id="5_iywne"]
-[ext_resource type="PackedScene" uid="uid://dvin8hvnh3na" path="res://eyery_lunch_gem.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://d4dy4xkyg4kp5" path="res://scenes/killzone.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://dvin8hvnh3na" path="res://scenes/eyery_lunch_gem.tscn" id="6_p57ef"]
 
 [sub_resource type="GDScript" id="GDScript_lbhrr"]
 script/source = "extends Node2D
@@ -32,10 +32,10 @@ func _process(delta: float) -> void:
 	
 func eyery_intro():
 	eyery.player_here.disconnect(eyery_intro)
+	await eyery.intro_animation()
 	var layout = Dialogic.Styles.load_style(\"res://styles/text_bubble.tres\") 
 	layout.register_character(load(\"res://characters for dialogic/eyere.dch\"), eyery) 
 	layout.register_character(load(\"res://characters for dialogic/protag.dch\"), $main_character)
-	await eyery.intro_animation()
 	Dialogic.start(\"eyere introduction\")
 	await Dialogic.timeline_ended
 	intro_played = true;
@@ -47,9 +47,12 @@ func _on_dialogic_signal(argument:String):
 		await eyery.intro_animation()
 		await eyery.player_here 
 		Dialogic.paused = false;
+	if argument == \"battle mode eyery\":
+		Dialogic.end_timeline();
+		get_tree().change_scene(\"res://scenes/battle_eyery.tscn\")
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
 texture = ExtResource("1_80nbo")
 0:0/0 = 0
 1:0/0 = 0
@@ -156,7 +159,7 @@ texture = ExtResource("1_80nbo")
 11:7/0 = 0
 12:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gee14"]
 texture = ExtResource("2_lnu2h")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.791378, 0.9892216, 8, -0.59353447, 8, 2.5719795, 8, 8, -1.3849125, 8, -1.3849125, 1.2859898)
@@ -296,8 +299,8 @@ texture = ExtResource("2_lnu2h")
 
 [sub_resource type="TileSet" id="TileSet_feb5d"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_e2o6t")
-sources/1 = SubResource("TileSetAtlasSource_lbhrr")
+sources/0 = SubResource("TileSetAtlasSource_u5sy4")
+sources/1 = SubResource("TileSetAtlasSource_gee14")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("2_lnu2h")
