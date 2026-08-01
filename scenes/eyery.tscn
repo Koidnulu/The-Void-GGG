@@ -13,24 +13,16 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 signal player_here;
 var health = 100
+signal eyery_died
 
-@onready var character: AnimatedSprite2D = $AnimatedSprite2D
+@onready var character: AnimatedSprite2D = $flipping/AnimatedSprite2D
 @onready var state_machine: StateMachine = $StateMachine
-@onready var eyery_hitbox: Area2D = $eyery_hitbox
+@onready var player: CharacterBody2D = $\"../main_character\"
+@onready var dealing_dmg_timer: Timer = $\"dealing dmg timer\"
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += ProjectSettings.get_setting(\"physics/2d/default_gravity\") * delta
-	var lost_health := 0
-	if get_tree().current_scene.name == \"battle eyery\":
-		if Input.is_action_just_pressed(\"attack1\"):
-			lost_health = 10
-		elif Input.is_action_just_pressed(\"attack2\"):
-			lost_health = 20
-	for body in eyery_hitbox.get_overlapping_bodies():
-		if body.name == \"main_character\":
-			health -= lost_health
-			print(health)
 	move_and_slide()
 
 
@@ -43,7 +35,46 @@ func intro_animation():
 	await character.animation_finished;
 	global_position += Vector2(80, 0)
 	state_machine.change_state(\"idle_eyery\") 
-	
+
+func take_dmg(lost_health: int):
+		health -= lost_health
+		# remember this is a vector so .x is used to check
+		var direction = (player.global_position - self.global_position).normalized()
+		if direction.x > 0:
+			self.position.x -= 10
+		elif direction.x <0:
+			self.position.x += 10
+		if health <= 0:
+			character.play(\"disappear\")
+			await character.animation_finished
+			queue_free()
+			eyery_died.emit()
+		print(health)
+
+func _on_eyery_attacking_body_entered(body: Node2D) -> void:
+	if body.name == \"main_character\" and get_tree().current_scene.name == \"battle eyery\":
+		attacking()
+		# this timer gives an interval where eyery starts attacking again
+		# if player didnt exit the body
+		dealing_dmg_timer.start()
+
+func attacking():
+	var hearts_box: HBoxContainer = $\"../CanvasLayer\"/HBoxContainer
+	# checking if eyery is attacking (not just that player has entered here)
+	if  state_machine.current_state and state_machine.current_state.name == \"attack_eyery\":
+		# attack_eyery is the class
+		var attack_script = state_machine.current_state
+		if attack_script.is_attacking:
+			player.get_node(\"flipping/AnimatedSprite2D\").modulate = Color(10, 10, 10, 1.0)
+			await get_tree().create_timer(0.1).timeout
+			player.get_node(\"flipping/AnimatedSprite2D\").modulate = Color.WHITE
+			hearts_box.damage_taken()
+			
+func _on_eyery_attacking_body_exited(body: Node2D) -> void:
+	dealing_dmg_timer.stop()
+
+func _on_dealing_dmg_timer_timeout() -> void:
+	attacking()
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hmo4"]
@@ -419,23 +450,40 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bwanj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwanj"]
+size = Vector2(74, 20)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ys72m"]
 radius = 10.440307
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7qo1e"]
 radius = 5.3851647
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bwanj"]
-
 [node name="eyery" type="CharacterBody2D" unique_id=746042523]
 script = SubResource("GDScript_7qo1e")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=681072925]
+[node name="flipping" type="Node2D" parent="." unique_id=974532945]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flipping" unique_id=681072925]
 position = Vector2(33, 0)
 sprite_frames = SubResource("SpriteFrames_r1sgu")
 animation = &"hurt"
 frame = 12
 frame_progress = 1.0
+
+[node name="eyery_hitbox" type="Area2D" parent="flipping" unique_id=546696009 groups=["hurtbox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flipping/eyery_hitbox" unique_id=1165411578]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_bwanj")
+
+[node name="eyery_attacking" type="Area2D" parent="flipping" unique_id=7168531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flipping/eyery_attacking" unique_id=1764379648]
+position = Vector2(41, 0)
+shape = SubResource("RectangleShape2D_bwanj")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=531447710]
 
@@ -455,7 +503,7 @@ metadata/_custom_type_script = "uid://bfmph5bu31rnt"
 [node name="follow_eyery" type="Node" parent="StateMachine" unique_id=1416597673 node_paths=PackedStringArray("enemy", "sprite")]
 script = ExtResource("3_yyd2i")
 enemy = NodePath("../..")
-sprite = NodePath("../../AnimatedSprite2D")
+sprite = NodePath("../../flipping/AnimatedSprite2D")
 metadata/_custom_type_script = "uid://clstupf37nwo3"
 
 [node name="idle_eyery" type="Node" parent="StateMachine" unique_id=1169958565]
@@ -466,11 +514,11 @@ metadata/_custom_type_script = "uid://b1nbl5ih08jja"
 script = ExtResource("5_mlf01")
 metadata/_custom_type_script = "uid://tre6e6re4oud"
 
-[node name="eyery_hitbox" type="Area2D" parent="." unique_id=546696009]
+[node name="dealing dmg timer" type="Timer" parent="." unique_id=1024564606]
+wait_time = 1.5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="eyery_hitbox" unique_id=1165411578]
-position = Vector2(-1, 0)
-shape = SubResource("CircleShape2D_bwanj")
-
+[connection signal="body_entered" from="flipping/eyery_hitbox" to="." method="_on_eyery_hitbox_body_entered"]
+[connection signal="body_entered" from="flipping/eyery_attacking" to="." method="_on_eyery_attacking_body_entered"]
+[connection signal="body_exited" from="flipping/eyery_attacking" to="." method="_on_eyery_attacking_body_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="eyery_hitbox" to="." method="_on_eyery_hitbox_body_entered"]
+[connection signal="timeout" from="dealing dmg timer" to="." method="_on_dealing_dmg_timer_timeout"]

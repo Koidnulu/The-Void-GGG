@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://bhxj6ltt8m44v"]
 
 [ext_resource type="PackedScene" uid="uid://biqu885w5u7x8" path="res://scenes/main_character.tscn" id="1_icln4"]
+[ext_resource type="Script" uid="uid://de38vsclf1sjl" path="res://scenes/battle_eyery.gd" id="1_tvgkg"]
 [ext_resource type="Texture2D" uid="uid://ctatwai8iuvs0" path="res://assets/CosmicLilac_Tiles.png" id="2_00e4d"]
+[ext_resource type="Script" uid="uid://c8btxsjscnltf" path="res://scripts/camera_2d.gd" id="2_oihgj"]
 [ext_resource type="Texture2D" uid="uid://c53pbvi047nli" path="res://assets/CosmicCastleLilacPNG_PetricakeGames.png" id="3_oihgj"]
 [ext_resource type="PackedScene" uid="uid://hwi10tvqoxqq" path="res://scenes/eyery.tscn" id="4_tvgkg"]
 [ext_resource type="PackedScene" uid="uid://cojhiho72cltc" path="res://scenes/heart bar.tscn" id="5_00e4d"]
@@ -256,7 +258,12 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5yigm")
 sources/1 = SubResource("TileSetAtlasSource_t3asw")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bwanj"]
+normal = Vector2(1, 0)
+distance = 21.0
+
 [node name="battle eyery" type="Node2D" unique_id=1368835518]
+script = ExtResource("1_tvgkg")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=688137571]
 repeat_size = Vector2(481, 195)
@@ -273,13 +280,14 @@ color = Color(0.09411765, 0.12941177, 0.3647059, 1)
 [node name="main_character" parent="." unique_id=966005065 instance=ExtResource("1_icln4")]
 position = Vector2(104, 33)
 
-[node name="Camera2D" type="Camera2D" parent="main_character" unique_id=1549926821]
+[node name="Camera2D" type="Camera2D" parent="main_character" unique_id=1549926821 groups=["camera"]]
 position = Vector2(1, -1)
 zoom = Vector2(4, 4)
 limit_left = -16
 limit_top = -197
 limit_right = 100000000
 limit_bottom = 77
+script = ExtResource("2_oihgj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=140023979]
 tile_map_data = PackedByteArray("AAABAAIAAQAAAAAAAAACAAIAAQACAAMAAAADAAIAAQADAAMAAAAEAAIAAQAEAAMAAAAFAAIAAQABAAIAAAAGAAIAAQACAAIAAAAHAAIAAQADAAIAAAAIAAIAAQACAAIAAAAJAAIAAQADAAIAAAAKAAIAAQADAAIAAAALAAIAAQACAAIAAAAMAAIAAQADAAIAAAANAAIAAQACAAIAAAATAAIAAQACAAIAAAAUAAIAAQAEAAIAAAAVAAIAAQADAAMAAAAWAAIAAQAEAAMAAAAXAAIAAQAEAAMAAAAYAAIAAQAEAAAAAAAOAAIAAQADAAIAAAAPAAIAAQACAAIAAAAQAAIAAQACAAIAAAARAAIAAQACAAIAAAASAAIAAQADAAIAAAABAAMAAQAGAAAAAAACAAMAAQAGAAEAAAADAAMAAQAHAAEAAAAEAAMAAQAGAAEAAAAFAAMAAQAGAAEAAAAGAAMAAQAHAAEAAAAHAAMAAQAGAAEAAAAIAAMAAQAHAAEAAAAJAAMAAQAGAAEAAAAKAAMAAQAHAAEAAAALAAMAAQAGAAEAAAAMAAMAAQAHAAEAAAANAAMAAQAGAAEAAAAOAAMAAQAHAAEAAAAPAAMAAQAGAAEAAAAQAAMAAQAHAAEAAAARAAMAAQAGAAEAAAASAAMAAQAHAAEAAAATAAMAAQAGAAEAAAAUAAMAAQAHAAEAAAAVAAMAAQAGAAEAAAAWAAMAAQAHAAEAAAAXAAMAAQAGAAEAAAAYAAMAAQAHAAAAAAABAAQAAQAGAAAAAAABAAUAAQAGAAAAAAABAAYAAQAGAAAAAAABAAcAAQAGAAAAAAABAAgAAQAGAAAAAAAYAAQAAQAHAAAAAAAYAAUAAQAHAAAAAAAYAAYAAQAHAAAAAAAYAAcAAQAHAAAAAAAYAAgAAQAHAAAAAAAYAAkAAQAHAAAAAAABAAkAAQAGAAAAAAAYAAoAAQAHAAAAAAA=")
@@ -289,3 +297,16 @@ tile_set = SubResource("TileSet_eqlwv")
 position = Vector2(283, 27)
 
 [node name="CanvasLayer" parent="." unique_id=1993680115 instance=ExtResource("5_00e4d")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=494738975]
+position = Vector2(373, 17)
+rotation = 3.1399431
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1704796659]
+position = Vector2(369.98962, 6.610319)
+rotation = -3.1394176
+shape = SubResource("WorldBoundaryShape2D_bwanj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=885757411]
+position = Vector2(-40.9785, -13.067613)
+shape = SubResource("WorldBoundaryShape2D_bwanj")

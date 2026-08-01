@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://irxenabtryv2" path="res://assets/character sprites/Idle.png" id="6_u3evn"]
 [ext_resource type="Texture2D" uid="uid://du2o1fbjkteip" path="res://assets/character sprites/Jump.png" id="7_5q0wt"]
 [ext_resource type="Texture2D" uid="uid://camg4q7fcwicg" path="res://assets/character sprites/Run.png" id="8_qthh5"]
+[ext_resource type="AudioStream" uid="uid://cflg32mbibgt8" path="res://sounds/sword sound.mp3" id="10_kvjf6"]
+[ext_resource type="AudioStream" uid="uid://de35r85n23val" path="res://sounds/jumping.wav" id="11_hj3w6"]
 
 [sub_resource type="GDScript" id="GDScript_0ltrl"]
 script/source = "extends CharacterBody2D
@@ -18,15 +20,23 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 const ACCEL = 20;
 const DASH_SPEED = 300
-@onready var character: AnimatedSprite2D = $AnimatedSprite2D
+@onready var character: AnimatedSprite2D = $flipping/AnimatedSprite2D
 @onready var coyote_timer: Timer = $\"coyote timer\"
 @onready var dash_timer: Timer = $\"dash timer\"
+@onready var flipping: Node2D = $flipping
+@onready var player_attacking: Area2D = $flipping/player_attacking
+@onready var attack_timer: Timer = $\"attack timer\"
+# group name is camera
+@onready var camera: Camera2D = get_tree().get_first_node_in_group(\"camera\")
+@onready var sword: AudioStreamPlayer2D = $sword
+@onready var jump: AudioStreamPlayer2D = $jump
 
 
 var airbone : bool = false
 var dashing : bool = false
 var can_dash : bool = true
 var attacking: bool = false
+var dmg : int = 0 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -46,23 +56,13 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 		# stretch
 		character.scale = Vector2(0.7, 1.3)
+		jump.play()
 	
 	if Input.is_action_just_pressed(\"dash\") and can_dash:
 		dashing = true;
 		can_dash = false;
 		dash_timer.start();
 		
-	if Input.is_action_just_pressed(\"attack1\"):
-		attacking = true;
-		character.play(\"attack 1\")
-		await character.animation_finished
-		attacking = false
-	
-	if Input.is_action_just_pressed(\"attack2\"):
-		attacking = true;
-		character.play(\"attack 2\")
-		await character.animation_finished
-		attacking = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -70,9 +70,9 @@ func _physics_process(delta: float) -> void:
 
 			
 	if direction > 0:
-		character.flip_h = false;
+		flipping.scale.x = 1
 	if direction < 0:
-		character.flip_h = true;
+		flipping.scale.x = -1
 
 	if direction:
 		if dashing:
@@ -119,16 +119,48 @@ func update_animations() -> void:
 func _on_dash_timer_timeout() -> void:
 	dashing = false 
 	can_dash = true
-	
-func _on_player_hitbox_body_entered(body: Node2D) -> void:
-	if body.name == \"eyery\" and get_tree().current_scene.name == \"battle eyery\":
-		var hearts_box: HBoxContainer = $\"../CanvasLayer\"/HBoxContainer
-		var state_machine = body.get_node_or_null(\"StateMachine\")
-		if  state_machine.current_state.name == \"attack_eyery\":
-			# attack_eyery is the class
-			var attack_script = state_machine.current_state
-			if attack_script.is_attacking:
-				hearts_box.damage_taken();
+
+func enemy_flash():
+	if get_tree().current_scene.name != \"battle eyery\":
+		return
+		# the one detecting if the player attacked the enemy (if its overlapping)
+	var overlapping_areas = player_attacking.get_overlapping_areas()
+		
+	for area in overlapping_areas:
+		if area.is_in_group(\"hurtbox\"):
+			var enemy = area.owner
+			if enemy != null:
+				enemy.get_node(\"flipping/AnimatedSprite2D\").modulate = Color(10, 10, 10, 1)
+				await get_tree().create_timer(0.2).timeout
+				enemy.get_node(\"flipping/AnimatedSprite2D\").modulate = Color.WHITE
+				enemy.take_dmg(dmg)
+				camera.trigger_shake()
+
+func _input(event):
+	if Input.is_action_just_pressed(\"attack1\") and not attacking and attack_timer.is_stopped():
+		attack_1()
+	elif Input.is_action_just_pressed(\"attack2\") and not attacking and attack_timer.is_stopped():
+		attack_2()
+
+func attack_1():
+	attacking = true;
+	dmg = 10
+	character.play(\"attack 1\")
+	sword.play()
+	enemy_flash()
+	await character.animation_finished
+	attacking = false
+
+func attack_2():
+	attacking = true;
+	dmg = 20
+	character.play(\"attack 2\")
+	sword.play()
+	await get_tree().create_timer(0.5).timeout
+	sword.play()
+	enemy_flash()
+	await character.animation_finished
+	attacking = false
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wmkwl"]
@@ -746,6 +778,8 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47j6v"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ltrl"]
 radius = 8.0
 
@@ -754,12 +788,21 @@ radius = 8.0
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=966005065]
 script = SubResource("GDScript_0ltrl")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1819016888]
+[node name="flipping" type="Node2D" parent="." unique_id=236171615]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flipping" unique_id=1819016888]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_1vudk")
-animation = &"attack 1"
-frame = 4
-frame_progress = 0.4734877
+animation = &"attack 2"
+frame = 14
+frame_progress = 1.0
+
+[node name="player_attacking" type="Area2D" parent="flipping" unique_id=29418409]
+position = Vector2(25, -9)
+scale = Vector2(1.0000001, 1.0000001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="flipping/player_attacking" unique_id=488596403]
+shape = SubResource("RectangleShape2D_47j6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492116037]
 position = Vector2(0, -9)
@@ -771,6 +814,9 @@ one_shot = true
 
 [node name="dash timer" type="Timer" parent="." unique_id=2059820861]
 
+[node name="attack timer" type="Timer" parent="." unique_id=1713766408]
+wait_time = 0.5
+
 [node name="player_hitbox" type="Area2D" parent="." unique_id=1430767900]
 scale = Vector2(1.3091167, 1.3091167)
 
@@ -778,9 +824,15 @@ scale = Vector2(1.3091167, 1.3091167)
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_bwanj")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=488596403]
-position = Vector2(0, -8.000001)
-scale = Vector2(1.0000001, 1.0000001)
+[node name="sword" type="AudioStreamPlayer2D" parent="." unique_id=862618362]
+stream = ExtResource("10_kvjf6")
+bus = &"SFX"
 
+[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=910919707]
+stream = ExtResource("11_hj3w6")
+volume_db = -10.0
+bus = &"SFX"
+
+[connection signal="area_entered" from="flipping/player_attacking" to="." method="_on_player_attacking_area_entered"]
 [connection signal="timeout" from="dash timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]

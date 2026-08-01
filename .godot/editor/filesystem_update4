@@ -1,14 +1,3 @@
 res://scenes/game.tscn
 res://styles/text_bubble.tres
 res://styles/default_system.tres
-res://scenes/eyery.tscn
-res://scripts/state.gd
-res://scripts/state_machine.gd
-res://scripts/idle_eyery.gd
-res://scenes/main_character.tscn
-res://battle_eyery.tscn
-res://scripts/follow_eyery.gd
-res://scenes/battle_eyery.tscn
-res://scripts/attack_eyery.gd
-res://scenes/heart bar.tscn
-res://scripts/heart bar.gd

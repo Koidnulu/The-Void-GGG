@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d30ypghxhmxv8"]
 
-[ext_resource type="Texture2D" uid="uid://ctatwai8iuvs0" path="res://assets/CosmicLilac_Tiles.png" id="1_80nbo"]
-[ext_resource type="Texture2D" uid="uid://c53pbvi047nli" path="res://assets/CosmicCastleLilacPNG_PetricakeGames.png" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://8p88ph3nj2bc" path="res://assets/CosmicLilac_Tiles.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://dma07fkj24sgk" path="res://assets/CosmicCastleLilacPNG_PetricakeGames.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://biqu885w5u7x8" path="res://scenes/main_character.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://hwi10tvqoxqq" path="res://scenes/eyery.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://d4dy4xkyg4kp5" path="res://scenes/killzone.tscn" id="5_iywne"]
@@ -49,7 +49,7 @@ func _on_dialogic_signal(argument:String):
 		Dialogic.paused = false;
 	if argument == \"battle mode eyery\":
 		Dialogic.end_timeline();
-		get_tree().change_scene(\"res://scenes/battle_eyery.tscn\")
+		get_tree().change_scene_to_file(\"res://scenes/battle_eyery.tscn\")
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
