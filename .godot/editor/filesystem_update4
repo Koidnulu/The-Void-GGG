@@ -1,3 +1,24 @@
-res://scenes/game.tscn
+res://scenes/puzzle_game_level_1.tscn
 res://styles/text_bubble.tres
 res://styles/default_system.tres
+res://scenes/main_character.tscn
+res://scripts/platformer_player.gd
+res://scripts/state.gd
+res://scripts/state_machine.gd
+res://scripts/puzzle_player.gd
+res://timelines/tutorial.dtl
+res://timelines/fake chest.dtl
+res://scripts/interaction_manager.gd
+res://timelines/tv.dtl
+res://timelines/lamp_key.dtl
+res://timelines/lamp key.dtl
+res://timelines/going back level 1.dtl
+res://timelines/gem container.dtl
+res://timelines/won eyery.dtl
+res://timelines/died boss fight.dtl
+res://timelines/eyere introduction.dtl
+res://timelines/found eyery lunch.dtl
+res://scenes/battle_eyery.tscn
+res://scripts/portal.gd
+res://scenes/portal.tscn
+res://New_File.tres
