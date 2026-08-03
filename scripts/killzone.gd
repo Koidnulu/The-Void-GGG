@@ -16,4 +16,5 @@ func _on_timer_timeout() -> void:
 	Dialogic.preload_timeline("you died")
 	Dialogic.start("you died")
 	await Dialogic.timeline_ended
-	Dialogic.start_timeline(current_timeline, current_line)
+	if current_timeline != null:
+		Dialogic.start_timeline(current_timeline, current_line)

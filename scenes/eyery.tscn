@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hwi10tvqoxqq"]
 
-[ext_resource type="Texture2D" uid="uid://31kgwa68hmyx" path="res://assets/monster sprites/EyeBall Monster-Sheet.png" id="1_5yqyc"]
+[ext_resource type="Texture2D" uid="uid://dkax34ajblt7y" path="res://assets/monster sprites/EyeBall Monster-Sheet.png" id="1_5yqyc"]
 [ext_resource type="Script" uid="uid://bfmph5bu31rnt" path="res://scripts/state_machine.gd" id="2_pvmbe"]
 [ext_resource type="Script" uid="uid://clstupf37nwo3" path="res://scripts/follow_eyery.gd" id="3_yyd2i"]
 [ext_resource type="Script" uid="uid://b1nbl5ih08jja" path="res://scripts/idle_eyery.gd" id="4_mlf01"]
@@ -49,7 +49,6 @@ func take_dmg(lost_health: int):
 			await character.animation_finished
 			queue_free()
 			eyery_died.emit()
-		print(health)
 
 func _on_eyery_attacking_body_entered(body: Node2D) -> void:
 	if body.name == \"main_character\" and get_tree().current_scene.name == \"battle eyery\":
@@ -469,8 +468,8 @@ script = SubResource("GDScript_7qo1e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flipping" unique_id=681072925]
 position = Vector2(33, 0)
 sprite_frames = SubResource("SpriteFrames_r1sgu")
-animation = &"hurt"
-frame = 12
+animation = &"roll"
+frame = 8
 frame_progress = 1.0
 
 [node name="eyery_hitbox" type="Area2D" parent="flipping" unique_id=546696009 groups=["hurtbox"]]

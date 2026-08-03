@@ -84,3 +84,25 @@ func update_animations() -> void:
 		# the reason why state_machine does not need a reference is because this extends
 		# state, and in state, state_machine is declared in the variable
 		state_machine.change_state("puzzle_player")
+
+func handle_input(event: InputEvent):
+	if event.is_action_pressed("interact"):
+		var detector = player.detecting_tilemaps
+		var overlapping_bodies = detector.get_overlapping_bodies()
+		for body in overlapping_bodies:
+			if !body.is_visible_in_tree():
+				continue
+			else:
+				var tilemap_name = body.name
+				if body.name == "closed door":
+					body.visible = false
+					body.process_mode = PROCESS_MODE_DISABLED 
+					$"../../../open door".visible = true
+					break
+				if body.name == "open door":
+					Dialogic.end_timeline()
+					await Dialogic.timeline_ended
+					await BlackFade.fade_in()
+					get_tree().change_scene_to_file("res://scenes/puzzle_game_level_1.tscn")
+		
+		

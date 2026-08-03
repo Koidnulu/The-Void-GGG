@@ -1,7 +1,10 @@
+ColorRect
+CanvasLayer
+Area2D
+TileMapLayer
 AudioStreamPlayer2D
 Marker2D
 CollisionShape2D
-Area2D
 puzzle_player
 platformer_player
 StateMachine
@@ -10,5 +13,3 @@ AnimatedSprite2D
 AnimationPlayer
 Timer
 StaticBody2D
-Node2D
-Node

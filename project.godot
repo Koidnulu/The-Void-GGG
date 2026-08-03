@@ -13,6 +13,8 @@ config_version=5
 config/name="The Void GGG"
 run/main_scene="uid://d30ypghxhmxv8"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/image="uid://dcf2twdcuacv5"
 config/icon="res://icon.svg"
 
 [audio]
@@ -24,6 +26,7 @@ buses/default_bus_layout="uid://el6imlxmgoj2"
 Dialogic="*uid://ds2q0uclmolvu"
 Music="*uid://cd82ed64b2d7k"
 InteractionManager="*uid://bl6pdeggjk1x6"
+BlackFade="*uid://3phkwhqsbqby"
 
 [dialogic]
 

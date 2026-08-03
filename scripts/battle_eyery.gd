@@ -8,6 +8,7 @@ var eyery_game_over : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BlackFade.fade_out()
 	hearts_bar.player_died.connect(player_has_died)
 	eyery.eyery_died.connect(player_won)
 
@@ -24,7 +25,7 @@ func player_won():
 	if eyery_game_over:
 		return
 	eyery_game_over = true
-	var layout = Dialogic.Styles.load_style("res://styles/text_bubble.tres") 
-	layout.register_character(load("res://characters for dialogic/protag.dch"), $main_character)
 	Dialogic.start("won eyery")
+	var layout = Dialogic.Styles.load_style("text_bubble") 
+	layout.register_character(load("res://characters for dialogic/protag.dch"), $main_character)
 	await Dialogic.timeline_ended

@@ -5,3 +5,4 @@ protag: I found it.
 			protag: YOU WHAT?
 			eyere: Don’t worry, it should be somewhere near. Just search, I heard humans are agile anyway.
 			protag: Seriously…?
+			[signal arg="door reveal level 1"]
