@@ -3,3 +3,4 @@ if {has_key} == true:
 	set {verified_by_tv} = true
 else:
 	system: [It's a TV. It wants you to find a key and give it to them.]
+	set {interacted_tv} = true

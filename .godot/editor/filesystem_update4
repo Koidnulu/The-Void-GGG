@@ -11,3 +11,13 @@ res://scripts/puzzle_game_level_1.gd
 res://scenes/portal.tscn
 res://scenes/black_fade.tscn
 res://scripts/black_fade.gd
+res://scenes/battle_eyery.tscn
+res://main_screen.tscn
+res://scripts/main_screen.gd
+res://scenes/about_page.tscn
+res://scripts/about_page.gd
+res://scenes/main_screen.tscn
+res://scripts/damage_numbers.gd
+res://scripts/control_menu.gd
+res://control_menu.tscn
+res://scenes/control_menu.tscn

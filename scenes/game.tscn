@@ -17,19 +17,19 @@ var intro_played = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	BlackFade.fade_out()
 	Dialogic.start(\"tutorial\");
 	await Dialogic.timeline_ended
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	# use eyere_intro rather than eyere_intro() because need a calleable function
 	# (not yet called) instead of letting it execute immediately
 	eyery.player_here.connect(eyery_intro)
+	eyery.player_here.connect(found_lunch)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Dialogic.VAR.get_variable(\"eyery_lunch\") == true and intro_played:
-		eyery.player_here.connect(func(): Dialogic.start(\"found eyery lunch\"), Object.CONNECT_ONE_SHOT)
-		Dialogic.VAR.set_variable(\"eyery_lunch\", false)
-	
+func found_lunch():
+	if intro_played:
+		eyery.player_here.connect(func(): Dialogic.start(\"found eyery lunch\"))
+
 func eyery_intro():
 	eyery.player_here.disconnect(eyery_intro)
 	await eyery.intro_animation()
@@ -692,7 +692,7 @@ texture = ExtResource("2_lnu2h")
 [sub_resource type="TileSet" id="TileSet_u5sy4"]
 sources/0 = SubResource("TileSetAtlasSource_p57ef")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kvpfn"]
 texture = ExtResource("2_lnu2h")
 0:0/0 = 0
 1:0/0 = 0
@@ -816,7 +816,7 @@ texture = ExtResource("2_lnu2h")
 15:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p57ef"]
-sources/0 = SubResource("TileSetAtlasSource_iywne")
+sources/0 = SubResource("TileSetAtlasSource_kvpfn")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -86.0

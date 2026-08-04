@@ -1,8 +1,10 @@
-protag: I found it.
-- Give gem
-			protag: Here, can I get the [CORE MATERIAL] now?
-			eyere: I threw it elsewhere while you were getting me my lunch because it was kind of a last resort.
-			protag: YOU WHAT?
-			eyere: Don’t worry, it should be somewhere near. Just search, I heard humans are agile anyway.
-			protag: Seriously…?
-			[signal arg="door reveal level 1"]
+if {eyery_lunch} == true:
+	protag: I found it.
+	- Give gem
+		protag: Here, can I get the [CORE MATERIAL] now?
+		eyere: I threw it elsewhere while you were getting me my lunch because it was kind of a last resort.
+		protag: YOU WHAT?
+		eyere: Don’t worry, it should be somewhere near. Just search, I heard humans are agile anyway.
+		protag: Seriously…?
+		set {eyery_lunch} = false
+		[signal arg="door reveal level 1"]

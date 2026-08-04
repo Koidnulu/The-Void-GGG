@@ -6,3 +6,4 @@ protag: Uh...sure. Like fixing the spaghetti code and working on time management
 system: Goodbye.
 protag: You didn't deny it though.
 system: Game over.
+[signal arg="game over"]

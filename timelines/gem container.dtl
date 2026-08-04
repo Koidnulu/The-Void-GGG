@@ -6,5 +6,6 @@ if {verified_by_tv} == true:
 	system: Goodbye.
 	protag: You didn't deny it though.
 	system: Game over.
+	[signal arg="game over"]
 else:
 	system: Nothing to see here.

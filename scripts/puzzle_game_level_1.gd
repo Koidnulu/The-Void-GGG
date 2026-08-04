@@ -12,3 +12,8 @@ func _on_dialogic_signal(argument: String):
 		Dialogic.end_timeline()
 		await Dialogic.timeline_ended
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
+	if argument == "game over":
+		Dialogic.end_timeline()
+		await Dialogic.timeline_ended
+		Dialogic.VAR.reset()
+		get_tree().change_scene_to_file("res://scenes/main_screen.tscn")

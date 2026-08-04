@@ -19,6 +19,8 @@ signal eyery_died
 @onready var state_machine: StateMachine = $StateMachine
 @onready var player: CharacterBody2D = $\"../main_character\"
 @onready var dealing_dmg_timer: Timer = $\"dealing dmg timer\"
+@onready var dmg_number_place: Marker2D = $\"dmg number place\"
+
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -38,6 +40,7 @@ func intro_animation():
 
 func take_dmg(lost_health: int):
 		health -= lost_health
+		DamageNumbers.display_number(lost_health, dmg_number_place.global_position)
 		# remember this is a vector so .x is used to check
 		var direction = (player.global_position - self.global_position).normalized()
 		if direction.x > 0:
@@ -468,9 +471,7 @@ script = SubResource("GDScript_7qo1e")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="flipping" unique_id=681072925]
 position = Vector2(33, 0)
 sprite_frames = SubResource("SpriteFrames_r1sgu")
-animation = &"roll"
-frame = 8
-frame_progress = 1.0
+animation = &"hurt"
 
 [node name="eyery_hitbox" type="Area2D" parent="flipping" unique_id=546696009 groups=["hurtbox"]]
 
@@ -515,6 +516,9 @@ metadata/_custom_type_script = "uid://tre6e6re4oud"
 
 [node name="dealing dmg timer" type="Timer" parent="." unique_id=1024564606]
 wait_time = 1.5
+
+[node name="dmg number place" type="Marker2D" parent="." unique_id=596566677]
+position = Vector2(0, -17)
 
 [connection signal="body_entered" from="flipping/eyery_hitbox" to="." method="_on_eyery_hitbox_body_entered"]
 [connection signal="body_entered" from="flipping/eyery_attacking" to="." method="_on_eyery_attacking_body_entered"]

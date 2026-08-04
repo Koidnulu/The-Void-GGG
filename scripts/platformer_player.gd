@@ -3,6 +3,7 @@ extends State
 class_name platformer_player
 
 @export var player : CharacterBody2D
+var can_move: bool = true
 
 func physics_update(delta: float) -> void:
 	# Add the gravity.
@@ -49,6 +50,9 @@ func physics_update(delta: float) -> void:
 	
 	var was_on_floor = player.is_on_floor()
 	
+	if not can_move:
+		player.velocity = Vector2.ZERO
+		
 	player.move_and_slide()
 	
 	 # changed from being on floor to not

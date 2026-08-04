@@ -11,6 +11,7 @@ func _ready() -> void:
 	BlackFade.fade_out()
 	hearts_bar.player_died.connect(player_has_died)
 	eyery.eyery_died.connect(player_won)
+	Dialogic.signal_event.connect(on_dialogic_signal)
 
 func player_has_died():
 	if eyery_game_over:
@@ -29,3 +30,10 @@ func player_won():
 	var layout = Dialogic.Styles.load_style("text_bubble") 
 	layout.register_character(load("res://characters for dialogic/protag.dch"), $main_character)
 	await Dialogic.timeline_ended
+	
+func on_dialogic_signal(argument: String):
+	if argument == "game over":
+		Dialogic.end_timeline()
+		await Dialogic.timeline_ended
+		Dialogic.VAR.reset()
+		get_tree().change_scene_to_file("res://scenes/main_screen.tscn")

@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1785798105
+::res://::1785814248
 default_bus_layout.tres::AudioBusLayout::305360691308140053::1785627868::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::973171356559204741::1785627868::1785627868::1::::<><><>0<>0<>293619c2fa562fbc455db275c6383abe<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 New_File.tres::Resource/DialogicStyle::961511705691997237::1785727699::0::1::::<><><>0<>0<><>::uid://cqpb3ie51rwl5::::res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn<>uid://bwg6yncmh2cml::::res://addons/dialogic/Resources/dialogic_style_layer.gd<>uid://c1k5m0w3r40xf::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn<>uid://cy1y14inwkplb::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn<>uid://cn674foxwedqu::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn<>uid://bquja8jyk8kbr::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn<>uid://dsbwnp5hegnu3::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Glossary/glossary_popup_layer.tscn<>uid://dhk6j6eb6e3q::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Choices/vn_choice_layer.tscn<>uid://cvgf4c6gg0tsy::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_TextInput/text_input_layer.tscn<>uid://lx24i8fl6uo::::res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn<>uid://dv08k6ljua6fm::::res://addons/dialogic/Resources/dialogic_style.gd
@@ -642,12 +642,14 @@ godot_super-wakatime.gd::GDScript::6277149880384411866::1785627868::0::1::::<>Ed
 plugin.cfg::TextFile::-1::1785627868::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1785627868::0::1::::<><><>0<>0<><>::
 utils.gd::GDScript::5251015809120159908::1785627868::0::1::::<>RefCounted<><>0<>0<><>::
-::res://assets/::1785771538
+::res://assets/::1785814248
 CosmicCastleLilacPNG_PetricakeGames.png::CompressedTexture2D::8003103523470765654::1785627876::1785627874::1::::<><><>0<>0<>142b771d979d08957b1a0a68b6eb9cbc<>res://.godot/imported/CosmicCastleLilacPNG_PetricakeGames.png-9665cceb24da28dcfa86ec4839b4fbb2.ctex::
 CosmicLilac_Tiles.png::CompressedTexture2D::2349260898279952488::1785627875::1785627875::1::::<><><>0<>0<>7251abff574848a6a8af4888c7d394b7<>res://.godot/imported/CosmicLilac_Tiles.png-8b76929a0f5e563e799a05ff920af0b2.ctex::
 Dimensional_Portal.png::CompressedTexture2D::2231496477812607311::1785625922::1785628005::1::::<><><>0<>0<>82354962d8b0cf5a0fc69f765a4830ee<>res://.godot/imported/Dimensional_Portal.png-35fd3a80009fe90aec5607b67c7e5d1b.ctex::
 GEM 7 - BLUE - Spritesheet.png::CompressedTexture2D::5720442902869515564::1785627874::1785627875::1::::<><><>0<>0<>21826890d4d05b907aa88ff54076bc9d<>res://.godot/imported/GEM 7 - BLUE - Spritesheet.png-ee0f82b10a3e646606beb4d27b02552d.ctex::
 heart_32x32.png::CompressedTexture2D::4025406508054705212::1785627876::1785627874::1::::<><><>0<>0<>dcd6f3b7b0092601acf4abab97d0f928<>res://.godot/imported/heart_32x32.png-06a209d9e2d8c02968e59c65cb948f99.ctex::
+No Clocks.otf::FontFile::3816655833494045893::1785806256::1785806278::1::::<><><>0<>0<>5b3b5ee79c2299cb06d7997983542e39<>res://.godot/imported/No Clocks.otf-70067983a2fe349532bf705238278b7c.fontdata::
+Oxanium-Regular.ttf::FontFile::3363683660615272519::1785814171::1785814248::1::::<><><>0<>0<>611262d25b07caf9bd47a3c939e2b438<>res://.godot/imported/Oxanium-Regular.ttf-50768ebab376e9175b23248ab958dabf.fontdata::
 Red 32px1.png::CompressedTexture2D::3566807857453674603::1785627875::1785627875::1::::<><><>0<>0<>781b3b5e110ce50295a004172bb4b345<>res://.godot/imported/Red 32px1.png-4dd4b66aa799229fd16a4268d179743c.ctex::
 Red 32px2.png::CompressedTexture2D::7311636076280271408::1785627875::1785627875::1::::<><><>0<>0<>dda2969d026b757fd6b7814ae63b6c92<>res://.godot/imported/Red 32px2.png-12f80389cf4ef07d7c19e343f0094b89.ctex::
 StewV_Minerals_Sheet_01.png::CompressedTexture2D::56285971570596262::1785627875::1785627875::1::::<><><>0<>0<>79cfc408e60330052ce2c2baecfa7912<>res://.godot/imported/StewV_Minerals_Sheet_01.png-de6094090edf67752e5aa1b7815285f0.ctex::
@@ -663,36 +665,44 @@ Jump.png::CompressedTexture2D::976526868978307461::1785627874::1785627874::1::::
 Run.png::CompressedTexture2D::522701451218045685::1785627874::1785627874::1::::<><><>0<>0<>9f9e3fc601ae0587e49b6a3081a4aea8<>res://.godot/imported/Run.png-bdc3916cafac81e3574d1010d8a0d49e.ctex::
 ::res://assets/monster sprites/::1785627875
 EyeBall Monster-Sheet.png::CompressedTexture2D::7862598504110457516::1785627875::1785627875::1::::<><><>0<>0<>e3f173dfe80bb2dcbaa4ff221a4a15b2<>res://.godot/imported/EyeBall Monster-Sheet.png-b57196d50a45ddb7c169b37f08e8ecdf.ctex::
-::res://scenes/::1785798094
-battle_eyery.tscn::PackedScene::2925825698064666355::1785727312::0::1::::<><><>0<>0<><>::uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://de38vsclf1sjl::::res://scripts/battle_eyery.gd<>uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://c8btxsjscnltf::::res://scripts/camera_2d.gd<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn<>uid://cojhiho72cltc::::res://scenes/heart bar.tscn
-black_fade.tscn::PackedScene::1996697332142630370::1785798088::0::1::::<><><>0<>0<><>::
-eyery.tscn::PackedScene::537271726050340956::1785796963::0::1::::<><><>0<>0<><>::uid://dkax34ajblt7y::::res://assets/monster sprites/EyeBall Monster-Sheet.png<>uid://bfmph5bu31rnt::::res://scripts/state_machine.gd<>uid://clstupf37nwo3::::res://scripts/follow_eyery.gd<>uid://b1nbl5ih08jja::::res://scripts/idle_eyery.gd<>uid://tre6e6re4oud::::res://scripts/attack_eyery.gd
+::res://scenes/::1785814022
+about_page.tscn::PackedScene::8413596853814660981::1785812096::0::1::::<><><>0<>0<><>::uid://v1v468dhfdu0::::res://scripts/about_page.gd<>uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://bum208ettvbpl::::res://assets/No Clocks.otf<>uid://xsdw5k7thw0l::::res://sounds/button click.wav
+battle_eyery.tscn::PackedScene::2925825698064666355::1785805705::0::1::::<><><>0<>0<><>::uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://de38vsclf1sjl::::res://scripts/battle_eyery.gd<>uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://c8btxsjscnltf::::res://scripts/camera_2d.gd<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn<>uid://cojhiho72cltc::::res://scenes/heart bar.tscn
+black_fade.tscn::PackedScene::1996697332142630370::1785799452::0::1::::<><><>0<>0<><>::uid://bb4ntwxc3dny4::::res://scripts/black_fade.gd
+control_menu.tscn::PackedScene::3508823349630940327::1785813922::0::1::::<><><>0<>0<><>::uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://ce18gqgxix7q3::::res://scripts/control_menu.gd<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://bum208ettvbpl::::res://assets/No Clocks.otf<>uid://xsdw5k7thw0l::::res://sounds/button click.wav
+eyery.tscn::PackedScene::537271726050340956::1785812779::0::1::::<><><>0<>0<><>::uid://dkax34ajblt7y::::res://assets/monster sprites/EyeBall Monster-Sheet.png<>uid://bfmph5bu31rnt::::res://scripts/state_machine.gd<>uid://clstupf37nwo3::::res://scripts/follow_eyery.gd<>uid://b1nbl5ih08jja::::res://scripts/idle_eyery.gd<>uid://tre6e6re4oud::::res://scripts/attack_eyery.gd
 eyery_lunch_gem.tscn::PackedScene::254429160068257682::1785627867::0::1::::<><><>0<>0<><>::uid://btupeyaxdc6lk::::res://scripts/eyery_lunch_gem.gd<>uid://cnra4g277c87y::::res://assets/GEM 7 - BLUE - Spritesheet.png<>uid://bc85jjt2ekkpn::::res://sounds/gem pickup.mp3
-game.tscn::PackedScene::9177643438539272759::1785795554::0::1::::<><><>0<>0<><>::uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn<>uid://d4dy4xkyg4kp5::::res://scenes/killzone.tscn<>uid://dvin8hvnh3na::::res://scenes/eyery_lunch_gem.tscn
+game.tscn::PackedScene::9177643438539272759::1785811266::0::1::::<><><>0<>0<><>::uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn<>uid://hwi10tvqoxqq::::res://scenes/eyery.tscn<>uid://d4dy4xkyg4kp5::::res://scenes/killzone.tscn<>uid://dvin8hvnh3na::::res://scenes/eyery_lunch_gem.tscn
 heart bar.tscn::PackedScene::5774504274186617332::1785627867::0::1::::<><><>0<>0<><>::uid://ghhph5c5iwor::::res://scripts/heart bar.gd<>uid://6dvll552087d::::res://assets/Red 32px1.png<>uid://ckyyx68nhdu6k::::res://assets/Red 32px2.png
 killzone.tscn::PackedScene::9202441870278776332::1785627867::0::1::::<><><>0<>0<><>::uid://cyc5evlu7sgso::::res://scripts/killzone.gd
-main_character.tscn::PackedScene::2982236528571687919::1785795239::0::1::::<><><>0<>0<><>::uid://cvjpbc2sjnp5r::::res://assets/character sprites/Attack 1.png<>uid://b50lyi8p37tjh::::res://assets/character sprites/Attack 2.png<>uid://cc6k421asr37m::::res://assets/character sprites/Dash.png<>uid://csot7kqvprwwq::::res://assets/character sprites/Death.png<>uid://dvyf63q02qa6g::::res://assets/character sprites/Fall.png<>uid://b6521o4oo7l2h::::res://assets/character sprites/Hurt.png<>uid://biw08jgfvkr1h::::res://assets/character sprites/Idle.png<>uid://n6biwvahb8cf::::res://assets/character sprites/Jump.png<>uid://hpg206bxa0yr::::res://assets/character sprites/Run.png<>uid://cflg32mbibgt8::::res://sounds/sword sound.mp3<>uid://de35r85n23val::::res://sounds/jumping.wav<>uid://bfmph5bu31rnt::::res://scripts/state_machine.gd<>uid://dti8onqndnef5::::res://scripts/puzzle_player.gd<>uid://n3u7f4ocsxqf::::res://scripts/platformer_player.gd
+main_character.tscn::PackedScene::2982236528571687919::1785799323::0::1::::<><><>0<>0<><>::uid://cvjpbc2sjnp5r::::res://assets/character sprites/Attack 1.png<>uid://b50lyi8p37tjh::::res://assets/character sprites/Attack 2.png<>uid://cc6k421asr37m::::res://assets/character sprites/Dash.png<>uid://csot7kqvprwwq::::res://assets/character sprites/Death.png<>uid://dvyf63q02qa6g::::res://assets/character sprites/Fall.png<>uid://b6521o4oo7l2h::::res://assets/character sprites/Hurt.png<>uid://biw08jgfvkr1h::::res://assets/character sprites/Idle.png<>uid://n6biwvahb8cf::::res://assets/character sprites/Jump.png<>uid://hpg206bxa0yr::::res://assets/character sprites/Run.png<>uid://cflg32mbibgt8::::res://sounds/sword sound.mp3<>uid://de35r85n23val::::res://sounds/jumping.wav<>uid://bfmph5bu31rnt::::res://scripts/state_machine.gd<>uid://dti8onqndnef5::::res://scripts/puzzle_player.gd<>uid://n3u7f4ocsxqf::::res://scripts/platformer_player.gd
+main_screen.tscn::PackedScene::8609153044089458517::1785814022::0::1::::<><><>0<>0<><>::uid://bkimvl3l6q17v::::res://scripts/main_screen.gd<>uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://bum208ettvbpl::::res://assets/No Clocks.otf<>uid://xsdw5k7thw0l::::res://sounds/button click.wav
 music.tscn::PackedScene::5053179072943602718::1785627867::0::1::::<><><>0<>0<><>::uid://c1887xy3bbk7g::::res://sounds/music.mp3
 portal.tscn::PackedScene::1105632765321380300::1785797974::0::1::::<><><>0<>0<><>::uid://cbf54lfekkcwe::::res://scripts/portal.gd<>uid://617okvtfm312::::res://assets/Dimensional_Portal.png<>uid://dt5effen1n1ho::::res://sounds/portal.wav
-puzzle_game_level_1.tscn::PackedScene::4157216487416107599::1785797955::0::1::::<><><>0<>0<><>::uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://5ffo56l8b11t::::res://scripts/puzzle_game_level_1.gd<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://p0tu0j013nfo::::res://scenes/portal.tscn<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn
-::res://scripts/::1785796267
+puzzle_game_level_1.tscn::PackedScene::4157216487416107599::1785808479::0::1::::<><><>0<>0<><>::uid://8p88ph3nj2bc::::res://assets/CosmicLilac_Tiles.png<>uid://5ffo56l8b11t::::res://scripts/puzzle_game_level_1.gd<>uid://dma07fkj24sgk::::res://assets/CosmicCastleLilacPNG_PetricakeGames.png<>uid://p0tu0j013nfo::::res://scenes/portal.tscn<>uid://biqu885w5u7x8::::res://scenes/main_character.tscn
+::res://scripts/::1785814022
+about_page.gd::GDScript::1528968062223833477::1785811297::0::1::::<>Control<><>0<>0<><>::
 attack_eyery.gd::GDScript::1368980937284990827::1785627868::0::1::::attack_eyery<>State<><>0<>0<><>::
-battle_eyery.gd::GDScript::7499862114195828357::1785793682::0::1::::<>Node2D<><>0<>0<><>::
+battle_eyery.gd::GDScript::7499862114195828357::1785808434::0::1::::<>Node2D<><>0<>0<><>::
+black_fade.gd::GDScript::2517300924361650777::1785798765::0::1::::<>CanvasLayer<><>0<>0<><>::
 camera_2d.gd::GDScript::7092333241462282943::1785627868::0::1::::<>Camera2D<><>0<>0<><>::
+control_menu.gd::GDScript::5109285789767684308::1785813923::0::1::::<>Control<><>0<>0<><>::
+damage_numbers.gd::GDScript::225997571626150759::1785813236::0::1::::<>Node<><>0<>0<><>::
 eyery_lunch_gem.gd::GDScript::3762215427573570460::1785627868::0::1::::<>Area2D<><>0<>0<><>::
 follow_eyery.gd::GDScript::5583267582608060792::1785627868::0::1::::follow_eyery<>State<><>0<>0<><>::
 heart bar.gd::GDScript::436035926103436197::1785627868::0::1::::<>HBoxContainer<><>0<>0<><>::
 idle_eyery.gd::GDScript::4238249478222144206::1785627868::0::1::::idle_eyery<>State<><>0<>0<><>::
 interaction_manager.gd::GDScript::3223410006007812533::1785729114::0::1::::<>Node<><>0<>0<><>::
 killzone.gd::GDScript::6463332144101100250::1785795782::0::1::::<>Area2D<><>0<>0<><>::
-platformer_player.gd::GDScript::971529337723962673::1785795932::0::1::::platformer_player<>State<><>0<>0<><>::
+main_screen.gd::GDScript::3105590869244354829::1785814022::0::1::::<>Control<><>0<>0<><>::
+platformer_player.gd::GDScript::971529337723962673::1785798946::0::1::::platformer_player<>State<><>0<>0<><>::
 portal.gd::GDScript::4855225983277144104::1785771612::0::1::::<>Area2D<><>0<>0<><>::
-puzzle_game_level_1.gd::GDScript::2116317408123171495::1785796267::0::1::::<>Node2D<><>0<>0<><>::
+puzzle_game_level_1.gd::GDScript::2116317408123171495::1785808434::0::1::::<>Node2D<><>0<>0<><>::
 puzzle_player.gd::GDScript::8511394472225966352::1785729167::0::1::::puzzle_player<>State<><>0<>0<><>::
-black_fade.gd::GDScript::2517300924361650777::1785798115::0::1::::<>CanvasLayer<><>0<>0<><>::
 state.gd::GDScript::2889462820840982588::1785640108::0::1::::State<>Node<><>0<>0<><>::
 state_machine.gd::GDScript::2763062268573288161::1785720246::0::1::::StateMachine<>Node<><>0<>0<><>::
-::res://sounds/::1785771545
+::res://sounds/::1785814178
+button click.wav::AudioStreamWAV::1651725234320201757::1785810713::1785810746::1::::<><><>0<>0<>90a99c170d9a1d71bde54b38ffc939b2<>res://.godot/imported/button click.wav-3aa19837f1939f69bf0fae68b38fcbc8.sample::
 gem pickup.mp3::AudioStreamMP3::2596760922075218531::1785627868::1785627868::1::::<><><>0<>0<>1beeb17f95cddcecb0e86243b8ba4469<>res://.godot/imported/gem pickup.mp3-c02d0f72ad6136e3a94d1e087945d92c.mp3str::
 jumping.wav::AudioStreamWAV::7499673651267037199::1785627868::1785627868::1::::<><><>0<>0<>d21813edf1d84da57640fcbae47646ea<>res://.godot/imported/jumping.wav-80619080af885124aff04f998b665916.sample::
 music.mp3::AudioStreamMP3::6667937820411206150::1785627868::1785627868::1::::<><><>0<>0<>56f45893dbb44ad1568d59f107cc4e4d<>res://.godot/imported/music.mp3-4d55fae6084a0fbb5b0ec7648a87c743.mp3str::

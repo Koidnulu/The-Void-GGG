@@ -319,17 +319,11 @@ scale = Vector2(1.3846651, 0.56207055)
 [node name="destination point" parent="Area2D2" index="2" unique_id=1141670849]
 position = Vector2(-179, -61)
 
-[node name="AudioStreamPlayer2D" parent="Area2D2" index="3" unique_id=985367376]
-bus = &"SFX"
-
 [node name="Area2D" parent="." unique_id=433245264 instance=ExtResource("4_a2caq")]
 position = Vector2(207, -25)
 
 [node name="destination point" parent="Area2D" index="2" unique_id=1141670849]
 position = Vector2(180, 58)
-
-[node name="AudioStreamPlayer2D" parent="Area2D" index="3" unique_id=985367376]
-bus = &"SFX"
 
 [node name="CharacterBody2D" parent="." unique_id=966005065 instance=ExtResource("4_vmwk4")]
 position = Vector2(52, 117)
