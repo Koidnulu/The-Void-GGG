@@ -11,7 +11,7 @@ A short level game that includes a platformer and a top-down puzzle mini-game.
 
 ## How to run it
 This project was made in Godot, so simply download the files and launch it in the Godot app. This was built in Godot version 4.7
-Otherwise, navigate to this itch link:
+Otherwise, navigate to this itch link: https://koidnulu.itch.io/the-void
 
 ## Controls/How to play
 Player movement: WASD or arrow keys
@@ -21,6 +21,7 @@ Attacks: Left click for attack1 and right click for attack2
 
 The player simply needs to interact with eyery to progress through the game. The game ends when the player finds the [CORE MATERIAL].
 In one route, the player can choose to help eyery by retrieving the gem as it's lunch, and go through the door by interacting with it. Later, the player can complete level 1 (or in this case the game because it only has one level) by interacting with the TV object and finding the key under the lamp and retrieving the [CORE MATERIAL].
+
 In another, the player can choose to fight eyery. If defeated, eyery would relinquish the [CORE MATERIAL].
 
 ## Known Bugs
