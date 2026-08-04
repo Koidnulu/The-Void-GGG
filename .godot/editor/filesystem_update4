@@ -1,23 +1,10 @@
-res://scenes/puzzle_game_level_1.tscn
+res://scenes/main_character.tscn
 res://styles/text_bubble.tres
 res://styles/default_system.tres
-res://scripts/battle_eyery.gd
-res://scenes/main_character.tscn
-res://scenes/game.tscn
-res://scenes/eyery.tscn
-res://scripts/platformer_player.gd
-res://scripts/killzone.gd
-res://scripts/puzzle_game_level_1.gd
-res://scenes/portal.tscn
-res://scenes/black_fade.tscn
-res://scripts/black_fade.gd
-res://scenes/battle_eyery.tscn
-res://main_screen.tscn
-res://scripts/main_screen.gd
+res://timelines/found eyery lunch.dtl
+res://timelines/won eyery.dtl
+res://timelines/gem container.dtl
+res://timelines/lamp key.dtl
+res://timelines/tv.dtl
 res://scenes/about_page.tscn
-res://scripts/about_page.gd
-res://scenes/main_screen.tscn
-res://scripts/damage_numbers.gd
-res://scripts/control_menu.gd
-res://control_menu.tscn
 res://scenes/control_menu.tscn

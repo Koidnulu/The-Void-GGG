@@ -1,6 +1,0 @@
-system: It seem to store something. Maybe your previous encounter?
-system: Would you like to go back to it?
-- Yes
-	[signal arg="switch level 1"]
-- No
-	[end_timeline]

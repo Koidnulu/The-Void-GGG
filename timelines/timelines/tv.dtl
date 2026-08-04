@@ -1,5 +1,0 @@
-if {has_key} == true:
-	system: [The TV gave its thanks. It never got it because it didn't have feet.  It wanted to let you go back and claim your reward in the locker.]
-	set {verified_by_tv} = true
-else:
-	system: [It's a TV. It wants you to find a key and give it to them.]

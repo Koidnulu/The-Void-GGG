@@ -6,5 +6,4 @@ if {eyery_lunch} == true:
 		protag: YOU WHAT?
 		eyere: Don’t worry, it should be somewhere near. Just search, I heard humans are agile anyway.
 		protag: Seriously…?
-		set {eyery_lunch} = false
 		[signal arg="door reveal level 1"]

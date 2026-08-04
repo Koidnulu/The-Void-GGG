@@ -32,32 +32,11 @@ DamageNumbers="*uid://dhqe86eylmp8"
 [dialogic]
 
 directories/dch_directory={
-"characters for dialogic/characters for dialogic/eyere": "res://timelines/characters for dialogic/characters for dialogic/eyere.dch",
-"characters for dialogic/characters for dialogic/protag": "res://timelines/characters for dialogic/characters for dialogic/protag.dch",
-"characters for dialogic/characters for dialogic/system": "res://timelines/characters for dialogic/characters for dialogic/system.dch",
-"characters for dialogic/eyere": "res://characters for dialogic/characters for dialogic/eyere.dch",
-"characters for dialogic/protag": "res://characters for dialogic/characters for dialogic/protag.dch",
-"characters for dialogic/system": "res://characters for dialogic/characters for dialogic/system.dch",
 "eyere": "res://characters for dialogic/eyere.dch",
 "protag": "res://characters for dialogic/protag.dch",
-"system": "res://characters for dialogic/system.dch",
-"timelines/characters for dialogic/eyere": "res://timelines/characters for dialogic/eyere.dch",
-"timelines/characters for dialogic/protag": "res://timelines/characters for dialogic/protag.dch",
-"timelines/characters for dialogic/system": "res://timelines/characters for dialogic/system.dch"
+"system": "res://characters for dialogic/system.dch"
 }
 directories/dtl_directory={
-"characters for dialogic/characters for dialogic/timelines/died boss fight": "res://timelines/characters for dialogic/characters for dialogic/timelines/died boss fight.dtl",
-"characters for dialogic/characters for dialogic/timelines/eyere introduction": "res://timelines/characters for dialogic/characters for dialogic/timelines/eyere introduction.dtl",
-"characters for dialogic/characters for dialogic/timelines/found eyery lunch": "res://timelines/characters for dialogic/characters for dialogic/timelines/found eyery lunch.dtl",
-"characters for dialogic/characters for dialogic/timelines/tutorial": "res://timelines/characters for dialogic/characters for dialogic/timelines/tutorial.dtl",
-"characters for dialogic/characters for dialogic/timelines/won eyery": "res://timelines/characters for dialogic/characters for dialogic/timelines/won eyery.dtl",
-"characters for dialogic/characters for dialogic/timelines/you died": "res://timelines/characters for dialogic/characters for dialogic/timelines/you died.dtl",
-"characters for dialogic/timelines/died boss fight": "res://characters for dialogic/characters for dialogic/timelines/died boss fight.dtl",
-"characters for dialogic/timelines/eyere introduction": "res://characters for dialogic/characters for dialogic/timelines/eyere introduction.dtl",
-"characters for dialogic/timelines/found eyery lunch": "res://characters for dialogic/characters for dialogic/timelines/found eyery lunch.dtl",
-"characters for dialogic/timelines/tutorial": "res://characters for dialogic/characters for dialogic/timelines/tutorial.dtl",
-"characters for dialogic/timelines/won eyery": "res://characters for dialogic/characters for dialogic/timelines/won eyery.dtl",
-"characters for dialogic/timelines/you died": "res://characters for dialogic/characters for dialogic/timelines/you died.dtl",
 "died boss fight": "res://timelines/died boss fight.dtl",
 "eyere introduction": "res://timelines/eyere introduction.dtl",
 "fake chest": "res://timelines/fake chest.dtl",
@@ -65,29 +44,6 @@ directories/dtl_directory={
 "gem container": "res://timelines/gem container.dtl",
 "going back level 1": "res://timelines/going back level 1.dtl",
 "lamp key": "res://timelines/lamp key.dtl",
-"timelines/characters for dialogic/timelines/died boss fight": "res://timelines/characters for dialogic/timelines/died boss fight.dtl",
-"timelines/characters for dialogic/timelines/eyere introduction": "res://timelines/characters for dialogic/timelines/eyere introduction.dtl",
-"timelines/characters for dialogic/timelines/found eyery lunch": "res://timelines/characters for dialogic/timelines/found eyery lunch.dtl",
-"timelines/characters for dialogic/timelines/tutorial": "res://timelines/characters for dialogic/timelines/tutorial.dtl",
-"timelines/characters for dialogic/timelines/won eyery": "res://timelines/characters for dialogic/timelines/won eyery.dtl",
-"timelines/characters for dialogic/timelines/you died": "res://timelines/characters for dialogic/timelines/you died.dtl",
-"timelines/died boss fight": "res://characters for dialogic/timelines/died boss fight.dtl",
-"timelines/eyere introduction": "res://characters for dialogic/timelines/eyere introduction.dtl",
-"timelines/fake chest": "res://timelines/timelines/fake chest.dtl",
-"timelines/found eyery lunch": "res://characters for dialogic/timelines/found eyery lunch.dtl",
-"timelines/gem container": "res://timelines/timelines/gem container.dtl",
-"timelines/going back level 1": "res://timelines/timelines/going back level 1.dtl",
-"timelines/lamp key": "res://timelines/timelines/lamp key.dtl",
-"timelines/timelines/died boss fight": "res://timelines/timelines/died boss fight.dtl",
-"timelines/timelines/eyere introduction": "res://timelines/timelines/eyere introduction.dtl",
-"timelines/timelines/found eyery lunch": "res://timelines/timelines/found eyery lunch.dtl",
-"timelines/timelines/tutorial": "res://timelines/timelines/tutorial.dtl",
-"timelines/timelines/won eyery": "res://timelines/timelines/won eyery.dtl",
-"timelines/timelines/you died": "res://timelines/timelines/you died.dtl",
-"timelines/tutorial": "res://characters for dialogic/timelines/tutorial.dtl",
-"timelines/tv": "res://timelines/timelines/tv.dtl",
-"timelines/won eyery": "res://characters for dialogic/timelines/won eyery.dtl",
-"timelines/you died": "res://characters for dialogic/timelines/you died.dtl",
 "tutorial": "res://timelines/tutorial.dtl",
 "tv": "res://timelines/tv.dtl",
 "won eyery": "res://timelines/won eyery.dtl",
@@ -139,6 +95,12 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
@@ -220,3 +182,4 @@ interact={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true

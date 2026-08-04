@@ -19,10 +19,10 @@
 script/source = "extends CharacterBody2D
 
 
-const SPEED = 150.0
+const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 const ACCEL = 20;
-const DASH_SPEED = 300
+const DASH_SPEED = 200
 @onready var character: AnimatedSprite2D = $flipping/AnimatedSprite2D
 @onready var coyote_timer: Timer = $\"coyote timer\"
 @onready var dash_timer: Timer = $\"dash timer\"
@@ -745,7 +745,7 @@ position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_0ltrl")
 
 [node name="coyote timer" type="Timer" parent="." unique_id=1573089695]
-wait_time = 0.15
+wait_time = 0.3
 one_shot = true
 
 [node name="dash timer" type="Timer" parent="." unique_id=2059820861]

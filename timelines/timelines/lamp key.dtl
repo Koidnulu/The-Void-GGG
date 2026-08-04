@@ -1,3 +1,0 @@
-if {has_key} == false:
-	system: [You notice a strange flicker. You seem to find something shiny behind it.]
-	set {has_key} = true
