@@ -25,7 +25,7 @@ In one route, the player can choose to help eyery by retrieving the gem as it's 
 In another, the player can choose to fight eyery. If defeated, eyery would relinquish the [CORE MATERIAL].
 
 ## Known Bugs
-Eyery may sometimes collide or follow the player when conversing. There isn't a fix to it currently aside from restarting the game. This game also uses Dialogic as a plugin, and if the dialogue is ignored multiple times it may sometimes cause issues either through formatting or not progressing at all. If any specifics are found, please report as an issue.
+Eyery may sometimes collide or follow the player when conversing. There isn't a fix to it currently aside from restarting the game (general advice is to maintain a little bit of distance from the sprite). This game also uses Dialogic as a plugin, and if the dialogue is ignored multiple times it may sometimes cause issues either through formatting or not progressing at all. If any specifics are found, please report as an issue.
 
 ## Credits/How it was made
 The game was made from various assets on itch, including the 
